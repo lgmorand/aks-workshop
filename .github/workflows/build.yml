@@ -1,0 +1,27 @@
+name: Validation Build 
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '2.6'
+
+    - run: gem update --system
+
+    - run: gem install jekyll 
+
+    - run: jekyll build
+ 
+    - uses: actions/upload-artifact@v1
+      with:
+        name: aks-workshop
+        path: _site
