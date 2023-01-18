@@ -29,8 +29,9 @@ jobs:
         name: aca-workshop
         path: _site
  
-    - uses: tibor19/static-website-deploy@ef251d3b0321765a71ba0a79e8b44c520235bb67
+    - uses: tibor19/static-website-deploy@2
       with:
         enabled-static-website: 'true'
         folder: '_site'
         connection-string: ${{ secrets.CONNECTION_STRING }}
+        public-access-policy: 'container'
