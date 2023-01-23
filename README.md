@@ -4,7 +4,7 @@ The former [AKS workshop](https://github.com/KocSistem/aks-workshop) is now depr
 
 ## Access the lab
 
-If you want to access the built content, you [can see the lab on this URL](https://stoakswks.z6.web.core.windows.net/).
+If you want to access the built content, you [can see the lab on this URL](https://aka.ms/aks-workshop).
 
 ## Contributing
 
