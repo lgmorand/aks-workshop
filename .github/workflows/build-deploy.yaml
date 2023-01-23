@@ -1,11 +1,9 @@
-name: Build and deploy on PROD
+name: Build and deploy
 
 on:
-  workflow_dispatch:
+  pull_request:
   push:
-    branches:
-      - main
-      - v1
+  workflow_dispatch:
 
 jobs:
   build:
