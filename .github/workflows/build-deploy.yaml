@@ -41,6 +41,6 @@ jobs:
 
             az storage azcopy blob upload \
               --container "\$web" \
-              --destination "${GITHUB_REF##*/}" \
+              --destination "${GITHUB_REF#refs/*/}" \
               --recursive \
               --source "_site/*"
