@@ -1,4 +1,4 @@
-name: Build and deploy on prod
+name: Build and deploy on PROD
 
 on:
   workflow_dispatch:

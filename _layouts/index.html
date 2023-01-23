@@ -6,13 +6,17 @@
 </head>
 
 <body>
-    <style> html{display:none;} </style>
+    <style>
+        html {
+            display: none;
+        }
+    </style>
     <script>
-       if(self == top) {
-           document.documentElement.style.display = 'block'; 
-       } else {
-           top.location = self.location; 
-       }
+        if (self == top) {
+            document.documentElement.style.display = 'block';
+        } else {
+            top.location = self.location;
+        }
     </script>
 
     <div class="container">
@@ -23,7 +27,7 @@
         </div>
 
         <div id="consent-container"></div>
-        
+
         <div class="content">
             <span class="toggle">open</span>
             <article class="markdown-body">
