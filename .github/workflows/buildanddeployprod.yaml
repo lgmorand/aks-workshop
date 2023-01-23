@@ -1,4 +1,4 @@
-name:  Build and deploy on prod
+name: Build and deploy on prod
 
 on:
   workflow_dispatch:
@@ -9,29 +9,40 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: '2.6'
+      - uses: actions/checkout@v3
+        name: Checkout sources
 
-    - run: gem update --system
+      - uses: ruby/setup-ruby@v1
+        name: Set up Ruby
+        with:
+          ruby-version: "2.7.7"
 
-    - run: gem install jekyll 
+      - run: make upgrade install
+        name: Set up build dependencies
 
-    - run: jekyll build
- 
-    - uses: actions/upload-artifact@v3
-      with:
-        name: aca-workshop
-        path: _site
- 
-    - uses: tibor19/static-website-deploy@v2
-      with:
-        enabled-static-website: 'true'
-        folder: '_site'
-        connection-string: ${{ secrets.CONNECTION_STRING }}
+      - run: make build
+        name: Build sources
 
+      - uses: actions/upload-artifact@v3
+        name: Persist artifact
+        with:
+          name: aca-workshop
+          path: _site
+
+      - uses: azure/CLI@v1
+        name: Deploy
+        env:
+          AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.CONNECTION_STRING }}
+        with:
+          azcliversion: 2.44.1
+          inlineScript: |
+            az config set extension.use_dynamic_install=yes_without_prompt
+
+            az storage azcopy blob upload \
+              --container "\$web" \
+              --destination "${GITHUB_REF##*/}" \
+              --recursive \
+              --source "_site/*"
