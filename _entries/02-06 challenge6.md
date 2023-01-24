@@ -1,7 +1,7 @@
 ---
-sectionid: runcontainer
+sectionid: basicmonitoring
 sectionclass: h2
-title: Running the application within a Docker container
+title: Getting basic activity metrics
 parent-id: upandrunning
 ---
 

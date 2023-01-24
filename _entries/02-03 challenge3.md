@@ -1,7 +1,7 @@
 ---
-sectionid: runcontainer
+sectionid: publishingtoacr
 sectionclass: h2
-title: Running the application within a Docker container
+title: Publishing to a Docker registry
 parent-id: upandrunning
 ---
 

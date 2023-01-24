@@ -1,8 +1,8 @@
 ---
-sectionid: runcontainer
+sectionid: azureintegration
 sectionclass: h2
-title: Running the application within a Docker container
-parent-id: upandrunning
+title: Integration with other services
+parent-id: deepdive
 ---
 
 TODO: quick summary of the task

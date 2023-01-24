@@ -1,8 +1,8 @@
 ---
-sectionid: runcontainer
+sectionid: costoptimization
 sectionclass: h2
-title: Running the application within a Docker container
-parent-id: upandrunning
+title: Cost optimization
+parent-id: deepdive
 ---
 
 TODO: quick summary of the task

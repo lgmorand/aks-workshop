@@ -1,8 +1,8 @@
 ---
-sectionid: runcontainer
+sectionid: resilience
 sectionclass: h2
-title: Running the application within a Docker container
-parent-id: upandrunning
+title: Ensuring application resilience
+parent-id: deepdive
 ---
 
 TODO: quick summary of the task

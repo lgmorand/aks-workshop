@@ -5,12 +5,7 @@ title: Application Overview
 parent-id: intro
 ---
 
-You will be deploying a customer-facing order placement and fulfillment application that is containerized and is architected for a microservice implementation.
+You will be deploying a web application that is containerized, served from AKS, an publicly accessible.
 
-![Application diagram](media/overview.png)
+Further optional sections will extend this application with additional features using a microservice architecture.
 
-The application consists of 3 components:
-
-* A public facing Order Capture swagger enabled API
-* A public facing frontend
-* A MongoDB database
