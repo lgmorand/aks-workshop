@@ -24,12 +24,6 @@ jobs:
       - run: make build
         name: Build sources
 
-      - uses: actions/upload-artifact@v3
-        name: Persist artifact
-        with:
-          name: aca-workshop
-          path: _site
-
       - uses: azure/CLI@v1
         name: Deploy
         env:
