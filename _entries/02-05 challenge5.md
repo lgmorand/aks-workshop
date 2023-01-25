@@ -1,7 +1,7 @@
 ---
-sectionid: runcontainer
+sectionid: enablingpublicaccess
 sectionclass: h2
-title: Running the application within a Docker container
+title: Enabling public access
 parent-id: upandrunning
 ---
 

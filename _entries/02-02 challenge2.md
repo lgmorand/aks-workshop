@@ -1,7 +1,7 @@
 ---
-sectionid: runcontainer
+sectionid: containerconfig
 sectionclass: h2
-title: Running the application within a Docker container
+title: Customizing the containerized app
 parent-id: upandrunning
 ---
 

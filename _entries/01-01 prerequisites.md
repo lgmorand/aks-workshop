@@ -9,6 +9,8 @@ parent-id: intro
 
 You can use the Azure Cloud Shell accessible at <https://shell.azure.com> once you login with an Azure subscription. The Azure Cloud Shell has the Azure CLI pre-installed and configured to connect to your Azure subscription as well as `kubectl` and `helm`.
 
+Alternatively, you need to ensure you have an updated version of Docker installed on your computer. You can install it using [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+
 
 ### Azure subscription
 
