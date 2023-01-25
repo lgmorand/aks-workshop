@@ -1,4 +1,4 @@
----
+<!-- ---
 sectionid: easydeployments
 sectionclass: h2
 title: Easy deployments
@@ -13,4 +13,4 @@ TODO: list tasks, provide hints about real-life usage, and a solution (behind a 
 
 > **Resources**
 
-TODO: add a list of resources which can help with the finishing the challenge and getting more in-depth information
+TODO: add a list of resources which can help with the finishing the challenge and getting more in-depth information -->
