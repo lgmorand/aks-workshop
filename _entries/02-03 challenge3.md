@@ -7,7 +7,7 @@ parent-id: upandrunning
 
 Azure provides [ACR](https://learn.microsoft.com/en-us/azure/container-registry/) (Azure Container Registry), a service to host container images.
 
-We will use ACR to store and distribute the container image that we have built in the previous challenges.
+You will use ACR to store and distribute the container image that you have built in the previous challenges.
 
 ### Tasks
 

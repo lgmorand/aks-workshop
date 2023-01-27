@@ -5,7 +5,7 @@ title: Running the application within a Docker container
 parent-id: upandrunning
 ---
 
-In this challenge, we will add a Dockerfile to a web application, build it, and run it using a Docker container.
+In this challenge, you will add a Dockerfile to a web application, build it, and run it using a Docker container.
 
 ### Tasks
 
@@ -31,7 +31,7 @@ cd nodejs
 
 #### Build a Docker image
 
-To run the app in Docker we need to add a [Dockerfile](https://docs.docker.com/build/building/packaging/#dockerfile) describing how the app will be built and ran.
+To run the app in Docker you need to add a [Dockerfile](https://docs.docker.com/build/building/packaging/#dockerfile) describing how the app will be built and ran.
 
 Create a new file named `Dockerfile` at the root of the app code and fill it with instructions on how to build and run the app.
 
@@ -57,7 +57,7 @@ CMD [ "node", "server.js" ]
 
 {% endcollapsible %}
 
-Now that we have a Dockerfile, we need to use it to build a Docker image.
+Now that you have a Dockerfile, you need to use it to build a Docker image.
 
 Use `docker build` to create the image.
 

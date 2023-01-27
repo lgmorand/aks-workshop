@@ -8,7 +8,7 @@ parent-id: upandrunning
 Congratulations!
 You have deployed your web app in an AKS cluster and you made it publicly accessible.
 
-In this challenge, we will explore the native integration between AKS and [Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/overview) by checking basic metrics metrics about the cluster.
+In this challenge, you will explore the native integration between AKS and [Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/overview) by checking basic metrics metrics about the cluster.
 
 ### Tasks
 

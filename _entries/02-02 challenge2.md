@@ -5,7 +5,7 @@ title: Customizing the containerized app
 parent-id: upandrunning
 ---
 
-In this challenge, we will customize the behaviour of the webapp container using environment variables without having to re-create the Docker image.
+In this challenge, you will customize the behaviour of the webapp container using environment variables without having to re-create the Docker image.
 
 ### Tasks
 
