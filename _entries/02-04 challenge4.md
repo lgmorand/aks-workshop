@@ -19,7 +19,7 @@ Get the latest available Kubernetes version in your preferred region and store i
 version=$(az aks get-versions -l <region> --query 'orchestrators[?!isPreview] | [-1].orchestratorVersion' -o tsv)
 ```
 
-The above command lists all versions of Kubernetes available to deploy using AKS. Newer Kubernetes releases are typically made available in "Preview". To get the latest non-preview version of Kubernetes, use the following command instead
+The command above returns the newest version of Kubernetes available to deploy using AKS. Newer Kubernetes releases are typically made available in "Preview". To get the latest non-preview version of Kubernetes, use the following command instead
 
 ```sh
 version=$(az aks get-versions -l <region> --query 'orchestrators[?isPreview == null].[orchestratorVersion][-1]' -o tsv)
@@ -32,10 +32,7 @@ version=$(az aks get-versions -l <region> --query 'orchestrators[?isPreview == n
 **Task Hints**
 * It's recommended to use the Azure CLI and the `az aks create` command to deploy your cluster. Refer to the docs linked in the Resources section, or run `az aks create -h` for details
 * The size and number of nodes in your cluster is not critical but two or more nodes of type `Standard_DS2_v2` or larger is recommended
-
-> **Note** You can create AKS clusters that support the [cluster autoscaler](https://docs.microsoft.com/en-us/azure/aks/cluster-autoscaler#about-the-cluster-autoscaler).
-
-##### **Option 1:** Create an AKS cluster without the cluster autoscaler (recommended)
+* You can optionally create AKS clusters that support the [cluster autoscaler](https://docs.microsoft.com/en-us/azure/aks/cluster-autoscaler#about-the-cluster-autoscaler). We will focus more on this in the advanced sections.
 
 Create AKS using the latest version (if using the provided lab environment)
 
@@ -43,80 +40,31 @@ Create AKS using the latest version (if using the provided lab environment)
 
 > **Note** If you're using the provided lab environment, you'll not be able to create the Log Analytics workspace required to enable monitoring while creating the cluster from the Azure Portal unless you manually create the workspace in your assigned resource group. Additionally, if you're running this on an Azure Pass, please add `--load-balancer-sku basic` to the flags, as the Azure Pass only supports the basic Azure Load Balancer. Additionaly, please pass in the service prinipal and secret provided.
 
-  ```sh
-  az aks create --resource-group <resource-group> \
-    --name <unique-aks-cluster-name> \
-    --location <region> \
-    --kubernetes-version $version \
-    --generate-ssh-keys \
-    --load-balancer-sku basic \
-    --service-principal <APP_ID> \
-    --client-secret <APP_SECRET>
-  ```
+```sh
+az aks create \
+  --resource-group <resource-group> \
+  --name <unique-aks-cluster-name> \
+  --location <region> \
+  --kubernetes-version $version \
+  --generate-ssh-keys \
+  --node-count 2 \
+  --generate-ssh-keys \
+  --node-vm-size Standard_DS2_v2 \
+  --network-plugin azure \
+  --enable-addons http_application_routing
 
-  {% endcollapsible %}
+az aks nodepool add \
+  --resource-group <resource-group> \
+  --cluster-name <unique-aks-cluster-name> \
+  --name userpool \
+  --node-count 2 \
+  --node-vm-size Standard_B2s
+```
 
-  Create AKS using the latest version (on your own subscription)
-
-  {% collapsible %}
-
-  ```sh
-  az aks create --resource-group <resource-group> \
-    --name <unique-aks-cluster-name> \
-    --location <region> \
-    --kubernetes-version $version \
-    --generate-ssh-keys
-  ```
-
-  {% endcollapsible %}
-
-##### **Option 2 ** Create an AKS cluster with the cluster autoscaler
-
-
-  AKS clusters create worker nodes in Virtual Machine Scale Sets by default. The number of nodes can be easily scaled up and down as required. AKS also supports the Kubernetes Cluster Autoscaler, which will automatically scale the number of nodes on demand to meet current system requirements.
-
-  To enable the Cluster Autoscaler, use the `az aks create` command specifying the `--enable-cluster-autoscaler` parameter, and a node `--min-count` and `--max-count`.
-
-Create AKS using the latest version (if using the provided lab environment)
-
-{% collapsible %}
-
-> **Note** If you're running this on an Azure Pass or the provided lab environment, please add `--load-balancer-sku basic` to the flags, as the Azure Pass only supports the basic Azure Load Balancer. Additionaly, please pass in the service prinipal and secret provided.
-
-   ```sh
-  az aks create --resource-group <resource-group> \
-    --name <unique-aks-cluster-name> \
-    --location <region> \
-    --kubernetes-version $version \
-    --generate-ssh-keys \
-    --vm-set-type VirtualMachineScaleSets \
-    --enable-cluster-autoscaler \
-    --min-count 1 \
-    --max-count 3 \
-    --load-balancer-sku basic \
-    --service-principal <APP_ID> \
-    --client-secret <APP_SECRET>
-  ```
+> **Note** You can optionally enable the autoscaler using the options `--enable-cluster-autoscaler`, `--min-count`, and `--max-count` in `az aks create`.
 
 {% endcollapsible %}
 
-Create AKS using the latest version (on your own subscription)
-
-{% collapsible %}
-
-   ```sh
-  az aks create --resource-group <resource-group> \
-    --name <unique-aks-cluster-name> \
-    --location <region> \
-    --kubernetes-version $version \
-    --generate-ssh-keys \
-    --vm-set-type VirtualMachineScaleSets \
-    --enable-cluster-autoscaler \
-    --min-count 1 \
-    --max-count 3
-  ```
-
-  {% endcollapsible %}
 
 #### Ensure you can connect to the cluster using `kubectl`
 
@@ -124,7 +72,7 @@ Create AKS using the latest version (on your own subscription)
 * `kubectl` is the main command line tool you will be using for working with Kubernetes and AKS. It is already installed in the Azure Cloud Shell
 * Refer to the AKS docs which includes [a guide for connecting kubectl to your cluster](https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough#connect-to-the-cluster) (Note. using the cloud shell you can skip the `install-cli` step).
 * A good sanity check is listing all the nodes in your cluster `kubectl get nodes`.
-* [This is a good cheat sheet](https://linuxacademy.com/site-content/uploads/2019/04/Kubernetes-Cheat-Sheet_07182019.pdf) for kubectl.
+* [This is a good cheat sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) for kubectl.
 * If you run kubectl in PowerShell ISE , you can also define aliases :
 ```sh
 function k([Parameter(ValueFromRemainingArguments = $true)]$params) { & kubectl $params }
@@ -155,4 +103,4 @@ kubectl get nodes
 > * <https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az-aks-create>
 > * <https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-portal>
 > * <https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough#connect-to-the-cluster>
-> * <https://linuxacademy.com/site-content/uploads/2019/04/Kubernetes-Cheat-Sheet_07182019.pdf>
+> * <https://kubernetes.io/docs/reference/kubectl/cheatsheet/>
