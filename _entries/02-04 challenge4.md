@@ -32,7 +32,8 @@ version=$(az aks get-versions -l <region> --query 'orchestrators[?isPreview == n
 **Task Hints**
 * It's recommended to use the Azure CLI and the `az aks create` command to deploy your cluster. Refer to the docs linked in the Resources section, or run `az aks create -h` for details
 * The size and number of nodes in your cluster is not critical but two or more nodes of type `Standard_DS2_v2` or larger is recommended
-* You can optionally create AKS clusters that support the [cluster autoscaler](https://docs.microsoft.com/en-us/azure/aks/cluster-autoscaler#about-the-cluster-autoscaler). We will focus more on this in the advanced sections.
+* You can optionally create AKS clusters that support the [cluster autoscaler](https://docs.microsoft.com/en-us/azure/aks/cluster-autoscaler#about-the-cluster-autoscaler). We will focus more on this in the advanced sections
+* You should give the cluster access to the container registry by "attaching" it
 
 Create AKS using the latest version (if using the provided lab environment)
 
@@ -51,7 +52,8 @@ az aks create \
   --generate-ssh-keys \
   --node-vm-size Standard_DS2_v2 \
   --network-plugin azure \
-  --enable-addons http_application_routing
+  --enable-addons http_application_routing \
+  --attach-acr <registry-name>
 
 az aks nodepool add \
   --resource-group <resource-group> \
@@ -61,7 +63,9 @@ az aks nodepool add \
   --node-vm-size Standard_B2s
 ```
 
-> **Note** You can optionally enable the autoscaler using the options `--enable-cluster-autoscaler`, `--min-count`, and `--max-count` in `az aks create`.
+> **Notes**
+* You can optionally enable the autoscaler using the options `--enable-cluster-autoscaler`, `--min-count`, and `--max-count` in `az aks create`.
+* You can attach an ACR registry to an existing AKS cluster using `az aks update -n <cluster-name> -g <resource-group> --attach-acr <registry-name>`
 
 {% endcollapsible %}
 
@@ -100,6 +104,7 @@ kubectl get nodes
 
 > **Resources**
 > * <https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough>
+> * <https://learn.microsoft.com/en-us/azure/aks/cluster-container-registry-integration?tabs=azure-cli>
 > * <https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az-aks-create>
 > * <https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-portal>
 > * <https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough#connect-to-the-cluster>

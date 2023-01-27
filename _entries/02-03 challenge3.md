@@ -61,7 +61,7 @@ Publish the webapp image to the new registry.
 
 ```sh
 # Login to the docker registry
-docker login <registry-name>
+az acr login -n <registry-name>
 
 # Tag the existing image with a new registry tag
 docker tag webapp <registry-name>/webapp
