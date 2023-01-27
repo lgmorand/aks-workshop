@@ -74,7 +74,7 @@ webapp   ClusterIP   10.0.17.161   <none>        80/TCP    2m9s
 Create and deploy an Ingress manifest file to make the app publicly accessible.
 
 **Task Hints**
-* You can use the DNS zone created by enabling [http_application_routing add-on](https://learn.microsoft.com/en-us/azure/aks/http-application-routing) when creating the cluster. You can use [az aks show](https://learn.microsoft.com/en-us/azure/aks/http-application-routing#deploy-http-routing-cli) to get the DNS zone.
+* You can use the DNS zone created by enabling [http_application_routing add-on](https://learn.microsoft.com/en-us/azure/aks/http-application-routing) when you created the cluster. You can use [az aks show](https://learn.microsoft.com/en-us/azure/aks/http-application-routing#deploy-http-routing-cli) to get the DNS zone.
 
 {% collapsible %}
 
