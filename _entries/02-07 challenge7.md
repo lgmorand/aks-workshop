@@ -1,7 +1,7 @@
 ---
-sectionid: enablingpublicaccess
+sectionid: basicmonitoring
 sectionclass: h2
-title: Enabling public access
+title: Getting basic activity metrics
 parent-id: upandrunning
 ---
 
