@@ -5,10 +5,10 @@ title: Enabling public access
 parent-id: upandrunning
 ---
 
-Now that we have deployed our application to AKS, it is time to expose it to the internet to allow our clients to use it.
-By default, Kubernetes blocks all external traffic, so we will need to add an *ingress rule* to allow traffic into the cluster.
+Now that you have deployed the application to AKS, it is time to expose it to the internet to allow clients to use it.
+By default, Kubernetes blocks all external traffic, so you will need to add an *ingress rule* to allow traffic into the cluster.
 
-In this challenge, we will expose our app by creating a [Service](https://kubernetes.io/docs/concepts/services-networking/service/) and an [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/).
+In this challenge, you will expose the application by creating a [Service](https://kubernetes.io/docs/concepts/services-networking/service/) and an [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/).
 
 ### Tasks
 
@@ -121,7 +121,7 @@ Make a request to the webapp using the FQDN of the newly created ingress and ens
 
 {% collapsible %}
 
-Use `kubectl get ingress` to get the FQDN of the ingress and ensure we have a public IP:
+Use `kubectl get ingress` to get the FQDN of the ingress and ensure there is a public IP:
 
 ```sh
 kubectl get ingress webapp

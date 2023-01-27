@@ -5,7 +5,7 @@ title: Deploying Kubernetes with Azure Kubernetes Service (AKS)
 parent-id: upandrunning
 ---
 
-Azure has a managed Kubernetes service, AKS (Azure Kubernetes Service), we'll use this to easily deploy and standup a Kubernetes cluster.
+Azure has a managed Kubernetes service, AKS (Azure Kubernetes Service), you will use this to easily deploy and standup a Kubernetes cluster.
 
 ### Tasks
 

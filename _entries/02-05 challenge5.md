@@ -5,13 +5,13 @@ title: Deploying the app to AKS
 parent-id: upandrunning
 ---
 
-In this challenge, we will deploy the webapp that we have built and ran locally into the Kubernetes cluster that we have created in the previous challenge.
+In this challenge, you will deploy the webapp that you have built and ran locally into the Kubernetes cluster that you have created in the previous challenge.
 
 ### Tasks
 
 #### Create a deployment manifest
 
-We need a deployment manifest file to deploy our application. The manifest file allows us to define what type of resource we want to deploy and all the details associated with the workload.
+You need a deployment manifest file to deploy your application. The manifest file allows you to define what type of resource you want to deploy and all the details associated with the workload.
 
 Kubernetes groups containers into logical structures called pods, which have no intelligence. Deployments add the missing intelligence to create your application.
 
