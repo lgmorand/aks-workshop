@@ -1,7 +1,7 @@
 ---
 sectionid: containerconfig
 sectionclass: h2
-title: Customizing the containerized app
+title: Customizing the containerized app (5m)
 parent-id: upandrunning
 ---
 
