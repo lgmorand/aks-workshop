@@ -1,7 +1,7 @@
 ---
 sectionid: enablingpublicaccess
 sectionclass: h2
-title: Enabling public access
+title: Enabling public access (30m)
 parent-id: upandrunning
 ---
 

@@ -1,7 +1,7 @@
 ---
 sectionid: runcontainer
 sectionclass: h2
-title: Running the application within a Docker container
+title: Running the application within a Docker container (25m)
 parent-id: upandrunning
 ---
 

@@ -1,7 +1,7 @@
 ---
 sectionid: deploy
 sectionclass: h2
-title: Deploying Kubernetes with Azure Kubernetes Service (AKS)
+title: Deploying Kubernetes with AKS (30m)
 parent-id: upandrunning
 ---
 

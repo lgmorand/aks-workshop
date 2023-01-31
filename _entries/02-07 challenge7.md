@@ -1,7 +1,7 @@
 ---
 sectionid: basicmonitoring
 sectionclass: h2
-title: Getting basic activity metrics
+title: Getting basic activity metrics (15m)
 parent-id: upandrunning
 ---
 

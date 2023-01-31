@@ -1,7 +1,7 @@
 ---
 sectionid: deployingwebapptoaks
 sectionclass: h2
-title: Deploying the app to AKS
+title: Deploying the app to AKS (20m)
 parent-id: upandrunning
 ---
 

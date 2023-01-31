@@ -1,7 +1,7 @@
 ---
 sectionid: publishingtoacr
 sectionclass: h2
-title: Publishing to a Docker registry
+title: Publishing to a Docker registry (15m)
 parent-id: upandrunning
 ---
 
