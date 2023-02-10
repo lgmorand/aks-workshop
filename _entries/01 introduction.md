@@ -19,13 +19,13 @@ Some of the things you’ll be going through:
 
 The lab will also includes optional sections to dive deeper into the following topics:
 
-- Deploying multiple microservices
-- Application performance monitoring
-- Entreprise governance
+<!-- - Deploying multiple microservices -->
+<!-- - Application performance monitoring -->
+<!-- - Entreprise governance -->
 - Detecting cost optimization opportunities
 - Handling load spikes
-- Resilience
-- Using managed identities to connect to other Azure Services
-- Easy deployments with Helm
+<!-- - Resilience -->
+<!-- - Using managed identities to connect to other Azure Services -->
+<!-- - Easy deployments with Helm -->
 
 You can review the [changelog](#changelog) for what has recently changed.
