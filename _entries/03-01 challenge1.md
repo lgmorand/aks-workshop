@@ -1,7 +1,7 @@
 ---
 sectionid: autoscaling
 sectionclass: h2
-title: Handling load spikes
+title: Handling load spikes (30m)
 parent-id: deepdive
 ---
 
