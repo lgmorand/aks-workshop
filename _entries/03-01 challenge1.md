@@ -9,7 +9,7 @@ Enabling autoscaling on your AKS cluster allows you to seamlessly handle increas
 
 Doing so will also help reduce operating costs by reducing the number of nodes in the cluster when they are no longer needed, for example after rush hours.
 
-![Cluster and Pod Autoscaler](media/cluster-autoscaler.png "Cluster and Pod Autoscaler")
+![Cluster and Pod Autoscaler](./media/cluster-autoscaler.png "Cluster and Pod Autoscaler")
 
 In this challenge, we will explore scaling both cluster nodes and the number of service instances (pods in a service).
 
