@@ -5,7 +5,7 @@ title: Running the application within a Docker container (25m)
 parent-id: upandrunning
 ---
 
-In this challenge, you will add a Dockerfile to a web application, build it, and run it using a Docker container.
+In this challenge, you will add a Dockerfile to a web application, build it, and run it using a Docker container. You must understand how to build container images  before using an orchestrator such as Kubernetes.
 
 ### Tasks
 

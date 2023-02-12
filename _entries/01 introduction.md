@@ -27,5 +27,3 @@ The lab will also includes optional sections to dive deeper into the following t
 <!-- - Resilience -->
 <!-- - Using managed identities to connect to other Azure Services -->
 <!-- - Easy deployments with Helm -->
-
-You can review the [changelog](#changelog) for what has recently changed.
