@@ -9,7 +9,15 @@ parent-id: intro
 
 This course is entirely explained from a Linux environment (on Windows, quick win can be to [go with the Windows Linux Subsystem](https://learn.microsoft.com/en-us/windows/wsl/install) or [Git BASH](https://gitforwindows.org)).
 
-Alternatively, you need to ensure you have an updated version of Docker installed on your computer. You can install it using [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+You can use [the Azure Cloud Shell service](https://shell.azure.com) once you log in with an Azure subscription. The Azure Cloud Shell has the Azure CLI pre-installed and configured to connect to your Azure subscription, as well as [kubectl](https://github.com/kubernetes/kubectl) and [Helm](https://github.com/helm/helm).
+
+Alternatively, you need to meet the following requirements:
+
+- [Azure CLI](https://github.com/Azure/azure-cli) v2.45.0
+- [Docker CLI](https://github.com/docker/cli) v23.0.1, with [Docker Desktop](https://www.docker.com/products/docker-desktop), or, for licensing related issues, use [Podman](https://github.com/containers/podman) and [Podman Desktop](https://github.com/containers/podman-desktop)
+- [Helm](https://github.com/helm/helm) v3.11.1
+- [kubectl](https://github.com/kubernetes/kubectl) v0.25.6
+- [Kubernetes](https://kubernetes.io) v1.25 (managed from [Azure Kubernetes Service](https://learn.microsoft.com/en-us/azure/aks))
 
 ### Azure subscription
 
