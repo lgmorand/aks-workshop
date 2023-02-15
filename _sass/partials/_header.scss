@@ -1,11 +1,12 @@
-header{
-    background:{
+header {
+    background: {
         size: 100%;
         repeat: no-repeat;
         image: url(../media/azure.png);
         position-x: center;
         position-y: center;
     }
+
     background-color: #0071cd;
     padding-top: 45px;
 
@@ -14,13 +15,13 @@ header{
     position: relative;
     max-width: 100%;
 
-    span{
+    span {
         position: absolute;
         top: 50%;
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
         color: $white;
         text-transform: uppercase;
         font-weight: bold;
