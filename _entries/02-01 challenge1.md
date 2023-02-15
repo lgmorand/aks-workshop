@@ -11,9 +11,9 @@ In this challenge, you will add a Dockerfile to a web application, build it, and
 
 #### Get the web app source code
 
-Clone the web app from the Github repository [https://github.com/ikhemissi/hello-worlds](https://github.com/ikhemissi/hello-worlds).
+Clone the web app from the GitHub repository [https://github.com/ikhemissi/hello-worlds](https://github.com/ikhemissi/hello-worlds).
 
-The folders are named after various programming languages so you can choose the one you are most comfortable with.
+The folders are named after various programming languages, so you can choose the one you are most comfortable with.
 
 {% collapsible %}
 
@@ -30,7 +30,7 @@ cd nodejs
 
 #### Build a Docker image
 
-To run the app in Docker you need to add a [Dockerfile](https://docs.docker.com/build/building/packaging/#dockerfile) describing how the app will be built and ran.
+To run the app in Docker, you need to add a [Dockerfile](https://docs.docker.com/build/building/packaging/#dockerfile) describing how the app will be built and ran.
 
 Create a new file named `Dockerfile` at the root of the app code and fill it with instructions on how to build and run the app.
 
@@ -82,7 +82,7 @@ docker run -it -p 9000:80 webapp
 
 {% endcollapsible %}
 
-Finally, load the app url [http://localhost:9000](http://localhost:9000) in a browser and make sure you see a `Hello world` message.
+Finally, load the app URL [http://localhost:9000](http://localhost:9000) in a browser and make sure you see a `Hello world` message.
 
 > **Resources**
 >

@@ -73,7 +73,7 @@ spec:
 
 * You can use [Azure Load Testing](https://learn.microsoft.com/en-us/azure/load-testing/quickstart-create-and-run-load-test) to simulate load spikes.
 
-Load test your service and make sure the number of pods scales up and down depending on CPU utlization.
+Load test your service and make sure the number of pods scales up and down depending on CPU utilization.
 
 {% collapsible %}
 
@@ -85,7 +85,7 @@ kubectl get hpa --watch
 
 Then create a quick test by following the steps in [Azure Load Testing](https://learn.microsoft.com/en-us/azure/load-testing/quickstart-create-and-run-load-test).
 
-As a reminder, you can get the url of your service using `kubectl get ingress`.
+As a reminder, you can get the URL of your service using `kubectl get ingress`.
 
 You should start seeing an output which looks like:
 
@@ -109,7 +109,7 @@ Once the load test ends, you should start seeing changes in resource usage (`TAR
 
 #### Enable the Cluster Autoscaler
 
-Update the user node pool (e.g. `userpool`) of your AKS cluster to enable the autoscaler and define the minimum number of nodes to 1 and the maximum to 3.
+Update the user node pool (e.g., `userpool`) of your AKS cluster to enable the autoscaler and define the minimum number of nodes to 1 and the maximum to 3.
 
 {% collapsible %}
 
@@ -125,7 +125,7 @@ az aks nodepool update \
     --cluster-name <aks-cluster-name>
 ```
 
-This operation may take few minutes, so in the meantime you can check the latest state of the node pool using the following command:
+This operation may take few minutes, so meanwhile you can check the latest state of the node pool using the following command:
 
 ```sh
 az aks nodepool show \

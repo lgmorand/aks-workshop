@@ -6,9 +6,9 @@ parent-id: upandrunning
 ---
 
 Congratulations!
-You have deployed your web app in an AKS cluster and you made it publicly accessible.
+You have deployed your web app in an AKS cluster, and you made it publicly accessible.
 
-In this challenge, you will explore the native integration between AKS and [Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/overview) by checking basic metrics metrics about the cluster.
+In this challenge, you will explore the native integration between AKS and [Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/overview) by checking basic metrics about the cluster.
 
 ### Tasks
 
@@ -18,12 +18,12 @@ Head to the [Azure portal](https://portal.azure.com/), and click on the `Metrics
 
 Answer the following questions:
 
-- What is the average CPU usage ?
-- How much RAM memory is allocated ?
-- How much disk space is used ?
-- How much inbound traffic ?
-- How much outbound traffic ?
-- What is the total amount of available memory in the cluster ?
+- What is the average CPU usage?
+- How much RAM is allocated?
+- How much disk space is used?
+- How much inbound traffic?
+- How much outbound traffic?
+- What is the total amount of available memory in the cluster?
 
 {% collapsible %}
 
