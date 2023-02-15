@@ -11,16 +11,13 @@ You can use the Azure Cloud Shell accessible at <https://shell.azure.com> once y
 
 Alternatively, you need to ensure you have an updated version of Docker installed on your computer. You can install it using [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 
-
 ### Azure subscription
 
 #### If you have an Azure subscription
 
 {% collapsible %}
 
-Please use your username and password to login to <https://portal.azure.com>.
-
-Also please authenticate your Azure CLI by running the command below on your machine and following the instructions.
+Please use your username and password to login in to [the Azure Portal](https://portal.azure.com). Also please authenticate your Azure CLI by running the command below on your machine and following the instructions.
 
 ```sh
 az account show

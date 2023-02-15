@@ -28,7 +28,6 @@ cd nodejs
 
 {% endcollapsible %}
 
-
 #### Build a Docker image
 
 To run the app in Docker you need to add a [Dockerfile](https://docs.docker.com/build/building/packaging/#dockerfile) describing how the app will be built and ran.
@@ -70,7 +69,6 @@ docker build -t webapp .
 
 {% endcollapsible %}
 
-
 #### Run the app
 
 Use `docker run` to start a new container from the image you have just created.
@@ -87,6 +85,7 @@ docker run -it -p 9000:80 webapp
 Finally, load the app url [http://localhost:9000](http://localhost:9000) in a browser and make sure you see a `Hello world` message.
 
 > **Resources**
+>
 > * <https://docs.docker.com/get-started/02_our_app/>
 > * <https://docs.docker.com/language/>
 > * <https://docs.docker.com/engine/reference/builder/>

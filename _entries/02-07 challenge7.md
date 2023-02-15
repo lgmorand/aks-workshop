@@ -17,6 +17,7 @@ In this challenge, you will explore the native integration between AKS and [Azur
 Head to the [Azure portal](https://portal.azure.com/), and click on the `Metrics` menu option under `Monitoring` on the left panel.
 
 Answer the following questions:
+
 - What is the average CPU usage ?
 - How much RAM memory is allocated ?
 - How much disk space is used ?
@@ -42,5 +43,5 @@ Check the following metrics:
 > **Note** Configure [Container Insights](https://learn.microsoft.com/en-us/azure/aks/monitor-aks#container-insights) to expand on the basic monitoring features and get data about the health and performance of your AKS cluster.
 
 > **Resources**
-> * <https://learn.microsoft.com/en-us/azure/aks/monitor-aks/>
-
+>
+> - <https://learn.microsoft.com/en-us/azure/aks/monitor-aks/>

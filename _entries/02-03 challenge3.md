@@ -33,7 +33,6 @@ az group create --name <resource-group> --location <region>
 
 {% endcollapsible %}
 
-
 #### Create a Container Registry
 
 Create a container registry in the new resource group and note down its name.
@@ -51,7 +50,6 @@ az acr list --resource-group <resource-group> --output table
 ```
 
 {% endcollapsible %}
-
 
 #### Publish the app image
 
@@ -74,7 +72,6 @@ docker push <registry-name>/webapp
 
 Ensure you can pull the image that you have published in the new registry.
 
-
 {% collapsible %}
 
 ```sh
@@ -84,7 +81,7 @@ docker pull <registry-name>/webapp
 
 {% endcollapsible %}
 
-
 > **Resources**
+>
 > * <https://learn.microsoft.com/en-us/azure/container-registry/>
 > * <https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli?tabs=azure-cli/>

@@ -44,6 +44,7 @@ kubectl apply -f ./service.yaml
 ```
 
 You should see an output like:
+
 ```sh
 service/webapp created
 ```
@@ -61,6 +62,7 @@ kubectl get service webapp
 ```
 
 You should see an output like:
+
 ```sh
 NAME     TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
 webapp   ClusterIP   10.0.17.161   <none>        80/TCP    2m9s
@@ -68,12 +70,12 @@ webapp   ClusterIP   10.0.17.161   <none>        80/TCP    2m9s
 
 {% endcollapsible %}
 
-
 #### Create an Ingress
 
 Create and deploy an Ingress manifest file to make the app publicly accessible.
 
 **Task Hints**
+
 * You can use the DNS zone created by enabling [http_application_routing add-on](https://learn.microsoft.com/en-us/azure/aks/http-application-routing) when you created the cluster. You can use [az aks show](https://learn.microsoft.com/en-us/azure/aks/http-application-routing#deploy-http-routing-cli) to get the DNS zone.
 
 {% collapsible %}
@@ -109,6 +111,7 @@ kubectl apply -f ./ingress.yaml
 ```
 
 You should see an output like:
+
 ```sh
 ingress.networking.k8s.io/webapp created
 ```
@@ -139,8 +142,8 @@ You can now load the url `0c29284998e94bea9005.westeurope.aksapp.io` on your bro
 {% endcollapsible %}
 
 > **Resources**
+>
 > * <https://kubernetes.io/docs/concepts/services-networking/>
 > * <https://learn.microsoft.com/en-us/cli/azure/network/dns/zone?view=azure-cli-latest#az-network-dns-zone-list/>
 > * <https://learn.microsoft.com/en-us/azure/aks/http-application-routing/>
 > * <https://learn.microsoft.com/en-us/training/modules/aks-deploy-container-app/7-exercise-expose-app/>
-

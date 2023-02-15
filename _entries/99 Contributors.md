@@ -11,5 +11,4 @@ The following people have contributed to this workshop, thanks!
 {% githubauthor clemlesne %}
 {% githubauthor lgmorand %}
 {% githubauthor ikhemissi %}
-
 </div>

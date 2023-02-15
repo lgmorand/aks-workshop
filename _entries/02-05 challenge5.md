@@ -58,7 +58,6 @@ spec:
 
 {% endcollapsible %}
 
-
 #### Deploy the webapp image using the manifest
 
 Use `kubectl` to apply the manifest and deploy the app.
@@ -99,12 +98,12 @@ webapp-7c58c5f699-r79mv            1/1     Running   0          63s
 
 {% endcollapsible %}
 
-
 #### Test the app
 
 Make a request to the newly deployed webapp and ensure it returns `Hello AKS`.
 
 **Task Hints**
+
 * Use port forwarding with `kubectl` to directly access pods in the AKS cluster
 
 {% collapsible %}
@@ -123,6 +122,7 @@ You can now load the url `http://localhost:4000/` on your browser and ensure it 
 {% endcollapsible %}
 
 > **Resources**
+>
 > * <https://kubernetes.io/docs/concepts/workloads/controllers/deployment/>
 > * <https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster/>
 > * <https://learn.microsoft.com/en-us/training/modules/aks-deploy-container-app/5-exercise-deploy-app/>

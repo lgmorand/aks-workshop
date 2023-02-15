@@ -18,10 +18,10 @@ In this challenge, we will explore scaling both cluster nodes and the number of 
 #### Enable the Horizontal Pod Autoscaler
 
 **Task Hints**
+
 * Make sure you have defined [resource requests and limits](https://learn.microsoft.com/en-us/azure/aks/developer-best-practices-resource-management#define-pod-resource-requests-and-limits) for your pod.
 
 Enable the Horizontal Pod Scaler to automatically scale the number of replicas of `webapp` (from 1 to 3) depending on resource usage (CPU utilization > 50%).
-
 
 {% collapsible %}
 
@@ -67,10 +67,10 @@ spec:
 
 {% endcollapsible %}
 
-
 #### Test the Horizontal Pod Autoscaler
 
 **Task Hints**
+
 * You can use [Azure Load Testing](https://learn.microsoft.com/en-us/azure/load-testing/quickstart-create-and-run-load-test) to simulate load spikes.
 
 Load test your service and make sure the number of pods scales up and down depending on CPU utlization.
@@ -107,7 +107,6 @@ Once the load test ends, you should start seeing changes in resource usage (`TAR
 
 {% endcollapsible %}
 
-
 #### Enable the Cluster Autoscaler
 
 Update the user node pool (e.g. `userpool`) of your AKS cluster to enable the autoscaler and define the minimum number of nodes to 1 and the maximum to 3.
@@ -137,8 +136,8 @@ az aks nodepool show \
 
 {% endcollapsible %}
 
-
 > **Resources**
+>
 > * <https://learn.microsoft.com/en-us/azure/aks/concepts-scale/>
 > * <https://learn.microsoft.com/en-us/azure/aks/tutorial-kubernetes-scale?tabs=azure-cli#autoscale-pods/>
 > * <https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/>

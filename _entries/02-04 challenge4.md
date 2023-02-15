@@ -30,6 +30,7 @@ version=$(az aks get-versions -l <region> --query 'orchestrators[?isPreview == n
 #### Create the AKS cluster
 
 **Task Hints**
+
 * It's recommended to use the Azure CLI and the `az aks create` command to deploy your cluster. Refer to the docs linked in the Resources section, or run `az aks create -h` for details
 * The size and number of nodes in your cluster is not critical but two or more nodes of type `Standard_DS2_v2` or larger is recommended
 * Make sure to enable the [http_application_routing add-on](https://learn.microsoft.com/en-us/azure/aks/http-application-routing) when creating the cluster to simplify networking settings in the next challenges
@@ -65,20 +66,22 @@ az aks nodepool add \
 ```
 
 > **Notes**
+
 * You can optionally enable the autoscaler using the options `--enable-cluster-autoscaler`, `--min-count`, and `--max-count` in `az aks create`.
 * You can attach an ACR registry to an existing AKS cluster using `az aks update -n <cluster-name> -g <resource-group> --attach-acr <registry-name>`
 
 {% endcollapsible %}
 
-
 #### Ensure you can connect to the cluster using `kubectl`
 
 **Task Hints**
+
 * `kubectl` is the main command line tool you will be using for working with Kubernetes and AKS. It is already installed in the Azure Cloud Shell
 * Refer to the AKS docs which includes [a guide for connecting kubectl to your cluster](https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough#connect-to-the-cluster) (Note. using the cloud shell you can skip the `install-cli` step).
 * A good sanity check is listing all the nodes in your cluster `kubectl get nodes`.
 * [This is a good cheat sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) for kubectl.
 * If you run kubectl in PowerShell ISE , you can also define aliases :
+
 ```sh
 function k([Parameter(ValueFromRemainingArguments = $true)]$params) { & kubectl $params }
 function kubectl([Parameter(ValueFromRemainingArguments = $true)]$params) { Write-Output "> kubectl $(@($params | ForEach-Object {$_}) -join ' ')"; & kubectl.exe $params; }
@@ -104,6 +107,7 @@ kubectl get nodes
 {% endcollapsible %}
 
 > **Resources**
+>
 > * <https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough>
 > * <https://learn.microsoft.com/en-us/azure/aks/cluster-container-registry-integration?tabs=azure-cli>
 > * <https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az-aks-create>
