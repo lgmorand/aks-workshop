@@ -9,9 +9,9 @@ In this challenge, you will add a Dockerfile to a web application, build it, and
 
 ### Tasks
 
-#### Get the web app source code
+#### Get the `webapp` source code
 
-Clone the web app from the GitHub repository [https://github.com/ikhemissi/hello-worlds](https://github.com/ikhemissi/hello-worlds).
+Clone the `webapp` from the Github repository [https://github.com/ikhemissi/hello-worlds](https://github.com/ikhemissi/hello-worlds).
 
 The folders are named after various programming languages, so you can choose the one you are most comfortable with.
 

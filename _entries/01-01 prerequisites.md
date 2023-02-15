@@ -7,7 +7,7 @@ parent-id: intro
 
 ### Tools
 
-You can use the Azure Cloud Shell accessible at <https://shell.azure.com> once you log in with an Azure subscription. The Azure Cloud Shell has the Azure CLI pre-installed and configured to connect to your Azure subscription, as well as `kubectl` and `helm`.
+This course is entirely explained from a Linux environment (on Windows, quick win can be to [go with the Windows Linux Subsystem](https://learn.microsoft.com/en-us/windows/wsl/install) or [Git BASH](https://gitforwindows.org)).
 
 Alternatively, you need to ensure you have an updated version of Docker installed on your computer. You can install it using [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 
@@ -72,4 +72,3 @@ You should now have access to the Azure Cloud Shell
 - You can use `code <file you want to edit>` in Azure Cloud Shell to open the built-in text editor.
 - You can upload files to the Azure Cloud Shell by dragging and dropping them
 - You can also do a `curl -o filename.ext https://file-url/filename.ext` to download a file from the internet.
-
