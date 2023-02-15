@@ -15,7 +15,7 @@ You will use ACR to store and distribute the container image that you have built
 
 > **Note** You don't need to create a resource group if you're using the lab environment. You can use the resource group created for you as part of the lab. To retrieve the resource group name in the managed lab environment, run `az group list`.
 
-Create a resource group which will be used to create the registry and the kubernetes cluster (in the next challenge).
+Create a resource group, which will be used to create the registry and the Kubernetes cluster (in the next challenge).
 
 {% collapsible %}
 
@@ -53,7 +53,7 @@ az acr list --resource-group <resource-group> --output table
 
 #### Publish the app image
 
-Publish the webapp image to the new registry.
+Publish the web app image to the new registry.
 
 {% collapsible %}
 

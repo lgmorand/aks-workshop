@@ -5,7 +5,7 @@ title: Deploying the app to AKS (20m)
 parent-id: upandrunning
 ---
 
-In this challenge, you will deploy the webapp that you have built and ran locally into the Kubernetes cluster that you have created in the previous challenge.
+In this challenge, you will deploy the web app that you have built and ran locally into the Kubernetes cluster that you have created in the previous challenge.
 
 ### Tasks
 
@@ -19,7 +19,7 @@ Create a deployment file and set the environment variable `GREETEE` to `AKS`.
 
 {% collapsible %}
 
-Create a `deployment.yaml` file with the following contents, and make sure to replace `<registry-fqdn>` with the fully qualified name of you registry:
+Create a `deployment.yaml` file with the following contents, and make sure to replace `<registry-fqdn>` with the fully qualified name of your registry:
 
 ```yaml
 # deployment.yaml
@@ -58,7 +58,7 @@ spec:
 
 {% endcollapsible %}
 
-#### Deploy the webapp image using the manifest
+#### Deploy the web app image using the manifest
 
 Use `kubectl` to apply the manifest and deploy the app.
 
@@ -100,7 +100,7 @@ webapp-7c58c5f699-r79mv            1/1     Running   0          63s
 
 #### Test the app
 
-Make a request to the newly deployed webapp and ensure it returns `Hello AKS`.
+Make a request to the newly deployed web app and ensure it returns `Hello AKS`.
 
 **Task Hints**
 
@@ -117,7 +117,7 @@ Use `kubectl port-forward` to directly access a pod:
 kubectl port-forward <pod-name> <local-port>:<pod-port>
 ```
 
-You can now load the url `http://localhost:4000/` on your browser and ensure it returns `Hello AKS`.
+You can now load the URL `http://localhost:4000/` on your browser and ensure it returns `Hello AKS`.
 
 {% endcollapsible %}
 

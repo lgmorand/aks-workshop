@@ -5,10 +5,10 @@ title: Contributors
 is-parent: yes
 ---
 
-The following people have contributed to this workshop, thanks!
+The following people (sorted in aphabetical order) have contributed to this workshop, thank you!
 
 <div class="github-contributors">
 {% githubauthor clemlesne %}
-{% githubauthor lgmorand %}
 {% githubauthor ikhemissi %}
+{% githubauthor lgmorand %}
 </div>

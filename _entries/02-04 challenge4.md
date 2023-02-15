@@ -19,7 +19,7 @@ Get the latest available Kubernetes version in your preferred region and store i
 version=$(az aks get-versions -l <region> --query 'orchestrators[?!isPreview] | [-1].orchestratorVersion' -o tsv)
 ```
 
-The command above returns the newest version of Kubernetes available to deploy using AKS. Newer Kubernetes releases are typically made available in "Preview". To get the latest non-preview version of Kubernetes, use the following command instead
+The command above returns the newest version of Kubernetes available to deploy using AKS. Newer Kubernetes releases are typically made available in “Preview”. To get the latest non-preview version of Kubernetes, use the following command instead.
 
 ```sh
 version=$(az aks get-versions -l <region> --query 'orchestrators[?isPreview == null].[orchestratorVersion][-1]' -o tsv)
@@ -32,9 +32,9 @@ version=$(az aks get-versions -l <region> --query 'orchestrators[?isPreview == n
 **Task Hints**
 
 * It's recommended to use the Azure CLI and the `az aks create` command to deploy your cluster. Refer to the docs linked in the Resources section, or run `az aks create -h` for details
-* The size and number of nodes in your cluster is not critical but two or more nodes of type `Standard_DS2_v2` or larger is recommended
+* The size and number of nodes in your cluster is not critical, but two or more nodes of type `Standard_DS2_v2` or larger is recommended
 * Make sure to enable the [http_application_routing add-on](https://learn.microsoft.com/en-us/azure/aks/http-application-routing) when creating the cluster to simplify networking settings in the next challenges
-* You should give the cluster access to the container registry by "attaching" it
+* You should give the cluster access to the container registry by “attaching” it
 * You can optionally create AKS clusters that support the [cluster autoscaler](https://docs.microsoft.com/en-us/azure/aks/cluster-autoscaler#about-the-cluster-autoscaler). We will focus more on this in the advanced sections
 
 Create AKS using the latest version (if using the provided lab environment)
@@ -77,10 +77,10 @@ az aks nodepool add \
 **Task Hints**
 
 * `kubectl` is the main command line tool you will be using for working with Kubernetes and AKS. It is already installed in the Azure Cloud Shell
-* Refer to the AKS docs which includes [a guide for connecting kubectl to your cluster](https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough#connect-to-the-cluster) (Note. using the cloud shell you can skip the `install-cli` step).
+* Refer to the AKS docs, which includes [a guide for connecting kubectl to your cluster](https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough#connect-to-the-cluster) (Note, using the cloud shell you can skip the `install-cli` step).
 * A good sanity check is listing all the nodes in your cluster `kubectl get nodes`.
 * [This is a good cheat sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) for kubectl.
-* If you run kubectl in PowerShell ISE , you can also define aliases :
+* If you run kubectl in PowerShell ISE, you can also define aliases :
 
 ```sh
 function k([Parameter(ValueFromRemainingArguments = $true)]$params) { & kubectl $params }
@@ -98,7 +98,7 @@ Authenticate
 az aks get-credentials --resource-group <resource-group> --name <unique-aks-cluster-name>
 ```
 
-List the available nodes
+List of the available nodes
 
 ```sh
 kubectl get nodes

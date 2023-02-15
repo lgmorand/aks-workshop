@@ -120,7 +120,7 @@ ingress.networking.k8s.io/webapp created
 
 #### Test the app
 
-Make a request to the webapp using the FQDN of the newly created ingress and ensure it returns `Hello AKS`.
+Make a request to the web app using the FQDN of the newly created ingress and ensure it returns `Hello AKS`.
 
 {% collapsible %}
 
@@ -137,7 +137,7 @@ NAME     CLASS    HOSTS                                       ADDRESS        POR
 webapp   <none>   0c29284998e94bea9005.westeurope.aksapp.io   20.23.222.68   80      52s
 ```
 
-You can now load the url `0c29284998e94bea9005.westeurope.aksapp.io` on your browser and ensure it returns `Hello AKS`.
+You can now load the URL `0c29284998e94bea9005.westeurope.aksapp.io` on your browser and ensure it returns `Hello AKS`.
 
 {% endcollapsible %}
 
