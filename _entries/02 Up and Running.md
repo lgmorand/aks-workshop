@@ -1,6 +1,6 @@
 ---
 sectionid: upandrunning
 sectionclass: h1
-title: Getting up and running
+title: First steps with AKS
 is-parent: yes
 ---

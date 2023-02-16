@@ -8,7 +8,7 @@ is-parent: yes
 
 Welcome to the Azure Kubernetes Workshop. In this lab, you'll go through tasks that will help you master the basic and more advanced topics required to deploy a containerized application to Kubernetes on [Azure Kubernetes Service (AKS)](https://azure.microsoft.com/en-us/services/kubernetes-service/).
 
-You can use this guide as a Kubernetes tutorial and as study material to help you get started to learn Kubernetes.
+You can use this guide as a Kubernetes tutorial and as study material to help you get started learning Kubernetes.
 
 Some things you’ll be going through:
 

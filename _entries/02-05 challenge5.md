@@ -5,7 +5,7 @@ title: Deploying the app to AKS (20m)
 parent-id: upandrunning
 ---
 
-In this challenge, you will deploy the web app that you have built and ran locally into the Kubernetes cluster that you have created in the previous challenge.
+In this challenge, you will deploy the web app that you have built and ran locally into the Kubernetes cluster that you created in the previous challenge.
 
 ### Tasks
 

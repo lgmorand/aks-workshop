@@ -43,7 +43,7 @@ Then deploy it using the following command:
 kubectl apply -f ./service.yaml
 ```
 
-You should see an output like:
+You should see an output like this:
 
 ```sh
 service/webapp created
@@ -61,7 +61,7 @@ Run the following command:
 kubectl get service webapp
 ```
 
-You should see an output like:
+You should see an output such as:
 
 ```sh
 NAME     TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
@@ -80,7 +80,7 @@ Create and deploy an Ingress manifest file to make the app publicly accessible.
 
 {% collapsible %}
 
-Create an `ingress.yaml` file with the following contents:
+Create an `ingress.yaml` file with the following content:
 
 ```yaml
 #ingress.yaml
@@ -110,7 +110,7 @@ Then deploy it using the following command:
 kubectl apply -f ./ingress.yaml
 ```
 
-You should see an output like:
+You should see an output like this:
 
 ```sh
 ingress.networking.k8s.io/webapp created

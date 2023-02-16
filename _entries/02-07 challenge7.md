@@ -5,7 +5,7 @@ title: Getting basic activity metrics (15m)
 parent-id: upandrunning
 ---
 
-Congratulations! You have deployed your `webapp` in an AKS cluster and you made it publicly accessible. In this challenge, you will explore the native integration between AKS and [Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/overview) by checking basic metrics metrics about the cluster.
+Congratulations! You have deployed your `webapp` in an AKS cluster and you made it publicly accessible. In this challenge, you will explore the native integration between AKS and [Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/overview) by checking basic metrics about the cluster.
 
 ### Tasks
 

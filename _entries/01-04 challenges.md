@@ -11,7 +11,7 @@ Useful resources are provided to help you work through each task. If you're work
 
 ### Core tasks
 
-Running through this as part of a one-day workshop, you should be able to complete all the **Getting up and running** section. This involves setting up a Kubernetes cluster, deploying the application container from Azure Container Registry, and setting up monitoring.
+Running through this as part of a one-day workshop, you should be able to complete the **Getting up and running** section. This involves setting up a Kubernetes cluster, deploying the application container from Azure Container Registry, and setting up monitoring.
 
 ### Optional tasks
 
