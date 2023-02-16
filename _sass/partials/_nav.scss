@@ -22,7 +22,6 @@ $nav-width: 350px;
     height: 100%;
     overflow-y: auto;
     background: $white;
-    border-right: 2px solid $lightgray;
     width: $nav-width;
 
     @media screen and (max-width: $sidebar-collapse) {
@@ -68,8 +67,6 @@ $nav-width: 350px;
         }
 
         >li {
-            border-bottom: 1px solid $lightgray;
-
             a {
                 display: block;
                 padding: .25rem 1rem;
