@@ -1,7 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic);
+// See: https://systemfontstack.com
+$font-sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+$fonts-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 
-$roboto: "Roboto", "Calibri", sans-serif;
-
-// Roboto Font Weights
+// Font weights
 $bold: 700;
 $light: 300;

@@ -1,11 +1,12 @@
 // Modules
 @import "../modules/all";
+@import "../assets/github-markdown.scss";
 
 // Shortcuts
-$noborder: 0px solid transparent;
+$noborder: 0 solid transparent;
 
 // General Stuff
-$sidebar-collapse: 1000px;
+$sidebar-collapse: 1024px;
 
 // Extendonly
 %clearfix {
@@ -15,8 +16,6 @@ $sidebar-collapse: 1000px;
         clear: both;
     }
 }
-
-// @extend %clearfix
 
 %paddinghack {
     position: absolute;
@@ -28,8 +27,6 @@ $sidebar-collapse: 1000px;
     height: 100%;
 }
 
-// @extend %paddinghack
-
 %visuallyhidden {
     margin: -1px;
     padding: 0;
@@ -39,12 +36,8 @@ $sidebar-collapse: 1000px;
     position: absolute;
 }
 
-// @extend %visuallyhidden
-
 %center {
     display: block;
     position: relative;
-    margin: 0px auto;
+    margin: 0 auto;
 }
-
-// @extend %center
