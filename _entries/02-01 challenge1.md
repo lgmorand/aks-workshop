@@ -19,7 +19,7 @@ The folders are named after various programming languages, so you can choose the
 
 ```sh
 # Clone the repo
-git clone git@github.com:ikhemissi/hello-worlds.git
+git clone https://github.com/ikhemissi/hello-worlds.git
 cd hello-worlds
 
 # Choose the NodeJS version of the app
