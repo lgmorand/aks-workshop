@@ -11,6 +11,8 @@ Azure has a managed Kubernetes service, AKS (Azure Kubernetes Service), you will
 
 #### Get the latest Kubernetes version available in AKS
 
+You can either let Azure choose the default version of kubernetes for you or you can specify the version during the creation of the cluster. To know which version of kubernetes is supported in your region, use the command `az aks get-versions`
+
 {% collapsible %}
 
 Get the latest available Kubernetes version in your preferred region and store it in a bash variable. Replace `<region>` with the region of your choosing, for example `eastus`.
