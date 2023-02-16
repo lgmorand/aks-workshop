@@ -37,8 +37,7 @@ jobs:
             BRANCH=${BRANCH#refs/*/}
             BRANCH=${BRANCH//\//-}
 
-            az storage azcopy blob upload \
+            az storage azcopy blob sync \
               --container "\$web" \
               --destination "${BRANCH}" \
-              --recursive \
-              --source "_site/*"
+              --source "_site"
