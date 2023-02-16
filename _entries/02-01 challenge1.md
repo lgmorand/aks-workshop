@@ -5,7 +5,7 @@ title: Running the application within a Docker container (25m)
 parent-id: upandrunning
 ---
 
-In this challenge, you will add a Dockerfile to a web application, build it, and run it using a Docker container. You must understand how to build container images before using an orchestrator such as Kubernetes.
+In this challenge, you will add a Dockerfile to a web application, build it, and run it using a Docker container. You must understand how to build container images before using an orchestrator such as Kubernetes. The build of the image must be done on your computer and Docker must be installed and running.
 
 ### Tasks
 
@@ -13,16 +13,12 @@ In this challenge, you will add a Dockerfile to a web application, build it, and
 
 Clone the `webapp` from the Github repository [https://github.com/ikhemissi/hello-worlds](https://github.com/ikhemissi/hello-worlds).
 
-The folders are named after various programming languages, so you can choose the one you are most comfortable with.
-
 {% collapsible %}
 
 ```sh
 # Clone the repo
-git clone git@github.com:ikhemissi/hello-worlds.git
+git clone https://github.com/ikhemissi/hello-worlds.git
 cd hello-worlds
-
-# Choose the NodeJS version of the app
 cd nodejs
 ```
 
@@ -71,7 +67,7 @@ docker build -t webapp .
 
 #### Run the app
 
-Use `docker run` to start a new container from the image you have just created.
+Use `docker run` to start a new container from the image you have just created. Use the port 9000 for your test (or any available one).
 
 {% collapsible %}
 
