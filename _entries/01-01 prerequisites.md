@@ -34,21 +34,6 @@ az login
 
 {% endcollapsible %}
 
-#### If you have been given access to a subscription as part of a lab, or you already have a Service Principal you want to use
-
-{% collapsible %}
-If you have lab environment credentials similar to the below, or you already have a Service Principal you will use with this workshop,
-
-![Lab environment credentials](media/lab-env.png)
-
-Please then perform an `az login` on your machine using the command below, passing in the `Application Id`, the `Application Secret Key` and the `Tenant Id`.
-
-```sh
-az login --service-principal --username APP_ID --password "APP_SECRET" --tenant TENANT_ID
-```
-
-{% endcollapsible %}
-
 #### Azure Cloud Shell
 
 You can use the Azure Cloud Shell accessible at <https://shell.azure.com> once you log in with an Azure subscription.
@@ -59,19 +44,19 @@ Head over to <https://shell.azure.com> and sign in with your Azure Subscription 
 
 Select **Bash** as your shell.
 
-![Select Bash](media/cloudshell/0-bash.png)
+![Select Bash](./media/cloudshell/0-bash.png)
 
 Select **Show advanced settings**
 
-![Select Show advanced settings](media/cloudshell/1-mountstorage-advanced.png)
+![Select Show advanced settings](./media/cloudshell/1-mountstorage-advanced.png)
 
 Set the **Storage account** and **File share** names to your resource group name (all lowercase, without any special characters), then hit **Create storage**
 
-![Azure Cloud Shell](media/cloudshell/2-storageaccount-fileshare.png)
+![Azure Cloud Shell](./media/cloudshell/2-storageaccount-fileshare.png)
 
 You should now have access to the Azure Cloud Shell
 
-![Set the storage account and fileshare names](media/cloudshell/3-cloudshell.png)
+![Set the storage account and fileshare names](./media/cloudshell/3-cloudshell.png)
 
 {% endcollapsible %}
 
