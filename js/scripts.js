@@ -5,7 +5,7 @@ function isScrolledIntoView(node) {
     var elemTop = $(node).offset().top;
     var elemBottom = elemTop + $(node).height();
 
-    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+    return elemTop < docViewBottom && elemBottom > docViewTop;
 }
 
 $(function () {
@@ -23,7 +23,7 @@ $(function () {
             var id = $(this).attr("id");
             var target = $('#nav [href="#' + id + '"]').parent("li");
 
-            if (isScrolledIntoView("#" + id)) {
+            if (isScrolledIntoView(this)) {
                 target.addClass("active");
             } else {
                 target.removeClass("active");

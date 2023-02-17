@@ -4,11 +4,7 @@
 }
 
 .markdown-body {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  line-height: 1.5;
-  word-wrap: break-word;
-  margin: 2rem 2rem 4rem 2rem;
+  margin: 2rem 2rem 8rem 2rem;
 }
 
 .markdown-body .pl-c {
@@ -17,12 +13,12 @@
 
 .markdown-body .pl-c1,
 .markdown-body .pl-s .pl-v {
-  color: #005cc5;
+  color: $blue;
 }
 
 .markdown-body .pl-e,
 .markdown-body .pl-en {
-  color: #6f42c1;
+  color: $darkpurple;
 }
 
 .markdown-body .pl-smi,
@@ -84,7 +80,7 @@
 .markdown-body .pl-mh .pl-en,
 .markdown-body .pl-ms {
   font-weight: $bold;
-  color: #005cc5;
+  color: $blue;
 }
 
 .markdown-body .pl-mi {
@@ -99,31 +95,31 @@
 
 .markdown-body .pl-md {
   color: #b31d28;
-  background-color: #ffeef0;
+  background-color: $lightgray;
 }
 
 .markdown-body .pl-mi1 {
   color: #22863a;
-  background-color: #f0fff4;
+  background-color: $lightgray;
 }
 
 .markdown-body .pl-mc {
   color: #e36209;
-  background-color: #ffebda;
+  background-color: $lightgray;
 }
 
 .markdown-body .pl-mi2 {
   color: $white;
-  background-color: #005cc5;
+  background-color: $blue;
 }
 
 .markdown-body .pl-mdr {
   font-weight: $bold;
-  color: #6f42c1;
+  color: $darkpurple;
 }
 
 .markdown-body .pl-ba {
-  color: #586069;
+  color: $darkgray;
 }
 
 .markdown-body .pl-sg {
@@ -158,20 +154,8 @@
   font-weight: $bold;
 }
 
-.markdown-body h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
 .markdown-body img {
   border-style: none;
-}
-
-.markdown-body code,
-.markdown-body kbd,
-.markdown-body pre {
-  font-family: $fonts-mono;
-  font-size: 1em;
 }
 
 .markdown-body hr {
@@ -202,15 +186,6 @@
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-}
-
-.markdown-body a {
-  color: #0366d6;
-  text-decoration: none;
-}
-
-.markdown-body a:hover {
-  text-decoration: underline;
 }
 
 .markdown-body strong {
@@ -247,54 +222,9 @@
   margin: 0;
 }
 
-.markdown-body h1,
-.markdown-body h2,
-.markdown-body h3,
-.markdown-body h4,
-.markdown-body h5,
-.markdown-body h6 {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.markdown-body h1 {
-  font-size: 32px;
-  font-weight: $bold;
-}
-
-.markdown-body h2 {
-  font-size: 24px;
-  font-weight: $bold;
-  margin-top: 48px;
-}
-
-.markdown-body h3 {
-  font-size: 1.5rem;
-  font-weight: $bold;
-}
-
-.markdown-body h4 {
-  font-size: 1rem;
-  font-weight: $bold;
-}
-
-.markdown-body h5 {
-  font-size: 14px;
-  font-weight: $bold;
-}
-
-.markdown-body h6 {
-  font-size: 12px;
-  font-weight: $bold;
-}
-
 .markdown-body p {
   margin-top: 0;
   margin-bottom: 1rem;
-}
-
-.markdown-body blockquote {
-  margin: 0;
 }
 
 .markdown-body ul,
@@ -320,16 +250,10 @@
   margin-left: 0;
 }
 
-.markdown-body code {
-  font-family: $fonts-mono;
-  font-size: 12px;
-}
-
 .markdown-body pre {
   margin-top: 0;
   margin-bottom: 0;
   font-family: $fonts-mono;
-  font-size: 12px;
 }
 
 .markdown-body .octicon {
@@ -388,294 +312,234 @@
   outline: none;
 }
 
-.markdown-body p,
-.markdown-body blockquote,
-.markdown-body ul,
-.markdown-body ol,
-.markdown-body dl,
-.markdown-body table,
-.markdown-body pre {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
+.markdown-body {
 
-.markdown-body hr {
-  height: 0.25em;
-  margin: 0;
-  margin: 24px 0;
-  background-color: $lightgray;
-  border: 0;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
 
-.markdown-body blockquote {
-  border-left: 0.25em solid #15b921;
-  background-color: $lightgray;
-}
+    &:hover .anchor {
+      text-decoration: none;
 
-.markdown-body blockquote>:first-child {
-  margin-top: 0;
-}
+      .octicon-link {
+        visibility: visible;
+      }
+    }
 
-.markdown-body blockquote>:last-child {
-  margin-bottom: 0;
-}
+    .octicon-link {
+      color: #1b1f23;
+      vertical-align: middle;
+      visibility: hidden;
+    }
+  }
 
-.markdown-body kbd {
-  display: inline-block;
-  margin: 3px 5px;
-  font-size: 11px;
-  line-height: 10;
-  color: #444d56;
-  vertical-align: middle;
-  background-color: $white;
-  border: solid 1px $lightgray;
-  border-bottom-color: $mediumgray;
-  border-radius: 3px;
-  box-shadow: inset 0 -1px 0 $mediumgray;
-}
+  p,
+  blockquote,
+  ul,
+  ol,
+  dl,
+  table,
+  pre {
+    margin: 0;
+    margin-bottom: 1rem;
+    word-wrap: break-word;
+  }
 
-.markdown-body h1,
-.markdown-body h2,
-.markdown-body h3,
-.markdown-body h4,
-.markdown-body h5,
-.markdown-body h6 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-weight: $bold;
-  line-height: 1.25;
-}
+  ul,
+  ol {
+    padding-left: 2rem;
+  }
 
-.markdown-body h1 .octicon-link,
-.markdown-body h2 .octicon-link,
-.markdown-body h3 .octicon-link,
-.markdown-body h4 .octicon-link,
-.markdown-body h5 .octicon-link,
-.markdown-body h6 .octicon-link {
-  color: #1b1f23;
-  vertical-align: middle;
-  visibility: hidden;
-}
+  ul ul,
+  ul ol,
+  ol ol,
+  ol ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
-.markdown-body h1:hover .anchor,
-.markdown-body h2:hover .anchor,
-.markdown-body h3:hover .anchor,
-.markdown-body h4:hover .anchor,
-.markdown-body h5:hover .anchor,
-.markdown-body h6:hover .anchor {
-  text-decoration: none;
-}
+  li {
+    word-wrap: break-all;
 
-.markdown-body h1:hover .anchor .octicon-link,
-.markdown-body h2:hover .anchor .octicon-link,
-.markdown-body h3:hover .anchor .octicon-link,
-.markdown-body h4:hover .anchor .octicon-link,
-.markdown-body h5:hover .anchor .octicon-link,
-.markdown-body h6:hover .anchor .octicon-link {
-  visibility: visible;
-}
+    &>p {
+      margin-top: 1rem;
+    }
 
-.markdown-body h1 {
-  margin-bottom: 0.3em;
-  font-size: 2em;
-  border-bottom: 1px solid #eaecef;
-}
+    &+li {
+      margin-top: .25rem;
+    }
+  }
 
-.markdown-body h2 {
-  margin-bottom: 0.3em;
-  font-size: 1.5em;
-  border-bottom: 1px solid #eaecef;
-}
+  dl {
+    margin: 0;
 
-.markdown-body h3 {
-  font-size: 1.25em;
-}
+    dt {
+      margin: 0;
+      margin-top: 1rem;
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: $bold;
+    }
 
-.markdown-body h4 {
-  font-size: 1em;
-}
+    dd {
+      margin: 0 1rem;
+      margin-bottom: 1rem;
+    }
+  }
 
-.markdown-body h5 {
-  font-size: 0.875em;
-}
+  table {
+    display: block;
+    width: 100%;
+    overflow: auto;
 
-.markdown-body h6 {
-  font-size: 0.85em;
-  color: #6a737d;
-}
+    tr {
+      background-color: $white;
+      border-top: 1px solid $lightgray;
 
-.markdown-body ul,
-.markdown-body ol {
-  margin-left: 2em;
-}
+      &:nth-child(2n) {
+        background-color: $white;
+      }
+    }
 
-.markdown-body ul ul,
-.markdown-body ul ol,
-.markdown-body ol ol,
-.markdown-body ol ul {
-  margin-top: 0;
-  margin-bottom: 0;
-}
+    th {
+      font-weight: $bold;
+    }
 
-.markdown-body li {
-  word-wrap: break-all;
-}
+    th,
+    td {
+      margin: 6px 13px;
+      border: 1px solid $lightgray;
+    }
+  }
 
-.markdown-body li>p {
-  margin-top: 1rem;
-}
+  img {
+    max-width: 100%;
+    box-sizing: content-box;
+    background-color: $white;
 
-.markdown-body li+li {
-  margin-top: 0.25em;
-}
+    &[align=right] {
+      margin-left: 1.5rem;
+    }
 
-.markdown-body dl {
-  margin: 0;
-}
+    &[align=left] {
+      margin-right: 1.5rem;
+    }
+  }
 
-.markdown-body dl dt {
-  margin: 0;
-  margin-top: 1rem;
-  font-size: 1em;
-  font-style: italic;
-  font-weight: $bold;
-}
+  code {
+    margin: .1rem .2rem;
+    background-color: rgba($lightgray, .5);
+    border-radius: .375rem;
+    padding: .1rem .2rem;
+  }
 
-.markdown-body dl dd {
-  margin: 0 1rem;
-  margin-bottom: 1rem;
-}
+  pre {
+    word-wrap: normal;
 
-.markdown-body table {
-  display: block;
-  width: 100%;
-  overflow: auto;
-}
+    &>code {
+      margin: 0;
+      margin: 0;
+      font-size: 100%;
+      word-break: normal;
+      white-space: pre;
+      background: transparent;
+      border: 0;
+    }
+  }
 
-.markdown-body table th {
-  font-weight: $bold;
-}
+  .highlight pre {
+    margin-bottom: 0;
+    word-break: normal;
 
-.markdown-body table th,
-.markdown-body table td {
-  margin: 6px 13px;
-  border: 1px solid $lightgray;
-}
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
 
-.markdown-body table tr {
-  background-color: $white;
-  border-top: 1px solid $lightgray;
-}
+  .highlight pre,
+  pre {
+    margin: 1rem;
+    overflow: auto;
+    font-size: .875rem;
+    line-height: 1.45;
+    background-color: $white;
+    border-radius: .375rem;
+  }
 
-.markdown-body table tr:nth-child(2n) {
-  background-color: $white;
-}
+  pre code {
+    display: inline;
+    max-width: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: transparent;
+    border: 0;
+  }
 
-.markdown-body img {
-  max-width: 100%;
-  box-sizing: content-box;
-  background-color: $white;
-}
+  .full-commit .btn-outline:not(:disabled):hover {
+    color: $blue;
+    border-color: $blue;
+  }
 
-.markdown-body img[align=right] {
-  margin-left: 1.5rem;
-}
+  kbd {
+    display: inline-block;
+    margin: .25rem;
+    font-family: $fonts-mono;
+    color: #444d56;
+    vertical-align: middle;
+    background-color: $white;
+    border: solid 1px $lightgray;
+    border-bottom-color: $lightgray;
+    border-radius: .375rem;
+    box-shadow: inset 0 -1px 0 $lightgray;
+  }
 
-.markdown-body img[align=left] {
-  margin-right: 1.5rem;
-}
+  :checked+.radio-label {
+    position: relative;
+    z-index: 1;
+    border-color: $blue;
+  }
 
-.markdown-body code {
-  margin: 0.2em 0.4em;
-  margin: 0;
-  font-size: 85%;
-  background-color: rgba(27,31,35,0.05);
-  border-radius: 3px;
-}
+  .task-list-item {
+    list-style-type: none;
 
-.markdown-body pre {
-  word-wrap: normal;
-}
+    &+.task-list-item {
+      margin-top: .25rem;
+    }
 
-.markdown-body pre>code {
-  margin: 0;
-  margin: 0;
-  font-size: 100%;
-  word-break: normal;
-  white-space: pre;
-  background: transparent;
-  border: 0;
-}
+    input {
+      margin: 0 .2rem .25rem -1.6rem;
+      vertical-align: middle;
+    }
+  }
 
-.markdown-body .highlight {
-  margin-bottom: 1rem;
-}
+  hr {
+    height: .25rem;
+    margin: 0;
+    margin: 1rem 0;
+    background-color: $lightgray;
+    border: 0;
+  }
 
-.markdown-body .highlight pre {
-  margin-bottom: 0;
-  word-break: normal;
-}
+  blockquote {
+    background-color: $lightpurple;
+    padding: 1rem;
+    border-radius: .375rem;
+    border: 1px solid $medpurple;
 
-.markdown-body .highlight pre,
-.markdown-body pre {
-  margin: 1rem;
-  overflow: auto;
-  font-size: 85%;
-  line-height: 1.45;
-  background-color: $white;
-  border-radius: 3px;
-}
+    &>:first-child {
+      margin-top: 0;
+    }
 
-.markdown-body pre code {
-  display: inline;
-  max-width: auto;
-  padding: 0;
-  margin: 0;
-  overflow: visible;
-  line-height: inherit;
-  word-wrap: normal;
-  background-color: transparent;
-  border: 0;
-}
-
-.markdown-body .full-commit .btn-outline:not(:disabled):hover {
-  color: #005cc5;
-  border-color: #005cc5;
-}
-
-.markdown-body kbd {
-  display: inline-block;
-  margin: 3px 5px;
-  font: 11px $fonts-mono;
-  line-height: 10;
-  color: #444d56;
-  vertical-align: middle;
-  background-color: $white;
-  border: solid 1px $lightgray;
-  border-bottom-color: $lightgray;
-  border-radius: 3px;
-  box-shadow: inset 0 -1px 0 $lightgray;
-}
-
-.markdown-body :checked+.radio-label {
-  position: relative;
-  z-index: 1;
-  border-color: #0366d6;
-}
-
-.markdown-body .task-list-item {
-  list-style-type: none;
-}
-
-.markdown-body .task-list-item+.task-list-item {
-  margin-top: 3px;
-}
-
-.markdown-body .task-list-item input {
-  margin: 0 0.2em 0.25em -1.6em;
-  vertical-align: middle;
-}
-
-.markdown-body hr {
-  border-bottom-color: $lightgray;
+    &>:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

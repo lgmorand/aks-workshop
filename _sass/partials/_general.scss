@@ -4,7 +4,8 @@ body {
         weight: $light;
     }
 
-    line-height: 1.4;
+    line-height: 160%;
+    text-rendering: optimizelegibility;
     background: $white;
     color: $black;
 }
@@ -18,14 +19,14 @@ body {
 .build {
     font-family: $fonts-mono;
     color: $black;
-    font-size: 0.7rem;
+    font-size: .875rem;
     text-align: center;
 }
 
 .commit {
     font-family: $fonts-mono;
     text-decoration: underline;
-    font-size: 0.7rem;
+    font-size: .875rem;
     color: $black;
     margin-top: 0;
     text-align: center;
@@ -33,11 +34,14 @@ body {
 
 .content {
     counter-reset: h1-counter;
+
     width: calc(100% - $nav-width);
     position: absolute;
-    right: 0;
+    left: $nav-width;
+    max-width: min($sidebar-collapse, 100%);
 
     @media screen and (max-width: $sidebar-collapse) {
+        left: 0;
         width: 100%;
     }
 
@@ -57,19 +61,12 @@ section {
     >ul,
     >ol,
     >div {
-        text-align: justify;
-        margin-right: 5%;
         box-sizing: border-box;
-    }
-
-    pre {
-        margin-left: 5%;
-        margin-right: 5%;
+        word-wrap: break-word;
     }
 
     >ol {
-        margin-left: calc(5% + 2rem);
-        text-align: left;
+        margin-left: 2rem;
     }
 }
 
@@ -80,16 +77,15 @@ h4,
 h5,
 h6 {
     font-weight: $bold;
-    line-height: 1;
+    line-height: 1.3;
     color: $black;
 }
 
 
 h1 {
-    font-size: 2.8rem;
-    text-align: left;
-    width: calc(100% - 3rem);
-    line-height: 1;
+    font-size: 2.5rem;
+
+
 
     &:before {
         content: counter(h1-counter) ". ";
@@ -107,13 +103,10 @@ h1.nocount:before {
 }
 
 h2 {
-    font-size: 2rem;
-    width: 90%;
-    text-align: left;
-    line-height: 1;
+    font-size: 2.125rem;
 
     &:before {
-        content: counter(h1-counter) "." counter(h2-counter) " ";
+        content: counter(h1-counter) "." counter(h2-counter) ". ";
     }
 }
 
@@ -134,10 +127,7 @@ h2.nocount:before {
 
 
 h3 {
-    font-size: 1.7rem;
-    width: 90%;
-    text-align: left;
-    line-height: 1;
+    font-size: 1.75rem;
 }
 
 h3.nocount:before {
@@ -152,9 +142,6 @@ h3.nocount:before {
 
 h4 {
     font-size: 1.5rem;
-    width: 90%;
-    text-align: left;
-    line-height: 1;
 }
 
 .h4 {
@@ -164,24 +151,14 @@ h4 {
 
 
 h5 {
-    font-size: 1.3rem;
-    width: 90%;
-    text-align: left;
-    line-height: 1;
+    font-size: 1.25rem;
 }
 
-
-a {
-    color: $black;
-    text-decoration: none;
-
-    .content & {
-        padding: 0 2px;
-    }
-}
-
-code {
-    font-family: $fonts-mono;
+code,
+kbd,
+pre {
+  font-family: $fonts-mono;
+  font-size: 85%;
 }
 
 .video_container {
@@ -201,8 +178,6 @@ pre {
 }
 
 iframe {
-    margin-left: 5%;
-    margin-right: 5%;
     box-sizing: border-box;
     width: 100%;
 }
@@ -216,19 +191,40 @@ p+p {
     list-style-position: outside;
 }
 
-button.toggle-collapsible {
-    background-color: $lightgray;
+button,
+a {
+    color: $blue;
+    text-decoration: none;
+    background: unset;
     cursor: pointer;
-    padding: 1rem;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:visited {
+        color: $darkpurple;
+    }
 }
 
-button.active,
-button.toggle-collapsible:hover {
-    background-color: $lightgray;
+button {
+    border: 1px solid $mediumgray;
+    padding: 1rem;
+    border-radius: .375rem;
+
+    &.active {
+        background-color: $lightgray;
+    }
+
+    &.toggle-collapsible {
+        width: 100%;
+        text-align: inherit;
+
+        &.active {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
 }
 
 .collapsible-content-container {
@@ -239,8 +235,17 @@ button.toggle-collapsible:hover {
     padding: 1rem;
     display: none;
     overflow: hidden;
-    border: 0.25em solid $lightgray;
-    text-align: left;
+
+    border: {
+        style: solid;
+        color: $mediumgray;
+        border-top-width: 1px;
+        border-bottom-width: 2px;
+        border-left-width: 2px;
+        border-right-width: 2px;
+        bottom-left-radius: .375rem;
+        bottom-right-radius: .375rem;
+    }
 }
 
 .collapsible-content pre.highlight {
@@ -248,7 +253,7 @@ button.toggle-collapsible:hover {
 }
 
 .github-contributor {
-    margin: 2px;
+    margin: 0 1rem 0.5rem 0;
 }
 
 .github-contributors {
@@ -270,6 +275,7 @@ img.github-avatar {
 }
 
 #copyright-notice {
-    font-size: 0.7rem;
+    font-size: .875rem;
     margin: 2rem 1rem;
+    text-align: center;
 }
