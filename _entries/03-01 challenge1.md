@@ -15,11 +15,11 @@ In this challenge, we will explore scaling both cluster nodes and the number of 
 
 #### Enable the Horizontal Pod Autoscaler
 
+Enable the Horizontal Pod Scaler to automatically scale the number of replicas of `webapp` (from 1 to 3) depending on resource usage (CPU utilization > 50%). You can either create an [Horizontal Pod Autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) manually or use the command `kubectl deploy autoscale`
+
 **Task Hints**
 
 * Make sure you have defined [resource requests and limits](https://learn.microsoft.com/en-us/azure/aks/developer-best-practices-resource-management#define-pod-resource-requests-and-limits) for your pod.
-
-Enable the Horizontal Pod Scaler to automatically scale the number of replicas of `webapp` (from 1 to 3) depending on resource usage (CPU utilization > 50%).
 
 {% collapsible %}
 
