@@ -7,8 +7,6 @@ parent-id: upandrunning
 
 Congratulations! You have deployed your `webapp` in an AKS cluster and you made it publicly accessible. In this challenge, you will explore the native integration between AKS and [Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/overview) by checking basic metrics about the cluster.
 
-### Tasks
-
 #### Get cluster activity metrics
 
 Head to the [Azure portal](https://portal.azure.com/), and click on the `Metrics` menu option under `Monitoring` on the left panel.

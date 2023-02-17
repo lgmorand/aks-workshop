@@ -13,8 +13,6 @@ Doing so will also help reduce operating costs by reducing the number of nodes i
 
 In this challenge, we will explore scaling both cluster nodes and the number of service instances (pods in a service).
 
-### Tasks
-
 #### Enable the Horizontal Pod Autoscaler
 
 **Task Hints**

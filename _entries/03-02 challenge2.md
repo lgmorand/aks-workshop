@@ -7,7 +7,7 @@ parent-id: deepdive
 
 TODO: quick summary of the task
 
-### Tasks
+#### Menu
 
 TODO: list tasks, provide hints about real-life usage, and a solution (behind a collapse)
 

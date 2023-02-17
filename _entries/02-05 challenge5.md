@@ -7,8 +7,6 @@ parent-id: upandrunning
 
 In this challenge, you will deploy the web app that you have built and ran locally into the Kubernetes cluster that you created in the previous challenge.
 
-### Tasks
-
 #### Create a deployment manifest
 
 You need a deployment manifest file to deploy your application. The manifest file allows you to define what type of resource you want to deploy and all the details associated with the workload.
@@ -83,7 +81,11 @@ NAME              READY   UP-TO-DATE   AVAILABLE   AGE
 webapp            0/1     1            0           16s
 ```
 
-Use `kubectl get pods` to check if the pod is running:
+{% endcollapsible %}
+
+Use `kubectl get pods` to check if the pod is running. Obtain the name of the created pod.
+
+{% collapsible %}
 
 ```sh
 kubectl get pods

@@ -9,8 +9,6 @@ Azure provides [ACR](https://learn.microsoft.com/en-us/azure/container-registry/
 
 You will use ACR to store and distribute the container image that you have built in the previous challenges.
 
-### Tasks
-
 #### Create a Resource Group
 
 Create a resource group, which will be used to create the registry and the Kubernetes cluster (in the next challenge).

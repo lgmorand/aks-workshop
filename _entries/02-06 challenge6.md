@@ -10,8 +10,6 @@ By default, Kubernetes blocks all external traffic, so you will need to add an *
 
 In this challenge, you will expose the application by creating a [Service](https://kubernetes.io/docs/concepts/services-networking/service/) and an [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/).
 
-### Tasks
-
 #### Create a Service
 
 Create and deploy a Service manifest file and set its type to `ClusterIP`.

@@ -7,8 +7,6 @@ parent-id: upandrunning
 
 In this challenge, you will customize the behavior of the web app container using environment variables without having to re-create the Docker image.
 
-### Tasks
-
 #### Customize the app with environment variables
 
 Customize the output of the app without rebuilding the Docker image to have the following changes:

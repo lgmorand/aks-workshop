@@ -7,8 +7,6 @@ parent-id: upandrunning
 
 Azure has a managed Kubernetes service, AKS (Azure Kubernetes Service), you will use this to easily deploy a Kubernetes cluster.
 
-### Tasks
-
 #### Get the latest Kubernetes version available in AKS
 
 You can either let Azure choose the default version of kubernetes for you or you can specify the version during the creation of the cluster. To know which version of kubernetes is supported in your region, use the command `az aks get-versions`
@@ -39,11 +37,9 @@ version=$(az aks get-versions -l <region> --query 'orchestrators[?isPreview == n
 * You should give the cluster access to the container registry by “attaching” it
 * You can optionally create AKS clusters that support the [cluster autoscaler](https://docs.microsoft.com/en-us/azure/aks/cluster-autoscaler#about-the-cluster-autoscaler). We will focus more on this in the advanced sections
 
-Create AKS using the latest version (if using the provided lab environment)
+Create AKS using the latest version
 
 {% collapsible %}
-
-> **Note** If you're using the provided lab environment, you'll not be able to create the Log Analytics workspace required to enable monitoring while creating the cluster from the Azure Portal unless you manually create the workspace in your assigned resource group. Additionally, if you're running this on an Azure Pass, please add `--load-balancer-sku basic` to the flags, as the Azure Pass only supports the basic Azure Load Balancer. Additionaly, please pass in the service prinipal and secret provided.
 
 ```sh
 az aks create \
@@ -79,15 +75,13 @@ az aks nodepool add \
 **Task Hints**
 
 * `kubectl` is the main command line tool you will use for working with Kubernetes and AKS. It is already installed in the Azure Cloud Shell
-* Refer to the AKS docs, which includes [a guide for connecting kubectl to your cluster](https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough#connect-to-the-cluster) (Note, using the cloud shell you can skip the `install-cli` step).
+* Refer to the AKS docs, which includes [a guide for connecting kubectl to your cluster](https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough#connect-to-the-cluster) (Note: if you are using the Azure Cloud Shell you can skip the `install-cli` step because `kubectl` is already installed).
 * A good sanity check is listing all the nodes in your cluster `kubectl get nodes`.
 * [This is a good cheat sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) for kubectl.
 
 {% collapsible %}
 
-> **Note** `kubectl`, the Kubernetes CLI, is already installed on the Azure Cloud Shell.
-
-Authenticate
+Authenticate against the cluster. The `az aks get-credentials` connect to the cluster and create a local kubeconfig file which will be used by `kubectl` to connect to the cluster.
 
 ```sh
 az aks get-credentials --resource-group <resource-group> --name <unique-aks-cluster-name>
