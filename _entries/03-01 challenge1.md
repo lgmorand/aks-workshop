@@ -13,8 +13,6 @@ Doing so will also help reduce operating costs by reducing the number of nodes i
 
 In this challenge, we will explore scaling both cluster nodes and the number of service instances (pods in a service).
 
-### Tasks
-
 #### Enable the Horizontal Pod Autoscaler
 
 **Task Hints**
@@ -87,7 +85,7 @@ Then create a quick test by following the steps in [Azure Load Testing](https://
 
 As a reminder, you can get the URL of your service using `kubectl get ingress`.
 
-You should start seeing an output which looks like:
+You should start seeing an output that looks like:
 
 ```sh
 NAME         REFERENCE           TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
@@ -125,7 +123,7 @@ az aks nodepool update \
     --cluster-name <aks-cluster-name>
 ```
 
-This operation may take few minutes, so meanwhile you can check the latest state of the node pool using the following command:
+This operation may take a few minutes, so meanwhile, you can check the latest state of the node pool using the following command:
 
 ```sh
 az aks nodepool show \

@@ -10,8 +10,6 @@ By default, Kubernetes blocks all external traffic, so you will need to add an *
 
 In this challenge, you will expose the application by creating a [Service](https://kubernetes.io/docs/concepts/services-networking/service/) and an [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/).
 
-### Tasks
-
 #### Create a Service
 
 Create and deploy a Service manifest file and set its type to `ClusterIP`.
@@ -43,7 +41,7 @@ Then deploy it using the following command:
 kubectl apply -f ./service.yaml
 ```
 
-You should see an output like:
+You should see an output like this:
 
 ```sh
 service/webapp created
@@ -61,26 +59,29 @@ Run the following command:
 kubectl get service webapp
 ```
 
-You should see an output like:
+You should see an output such as:
 
 ```sh
 NAME     TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
 webapp   ClusterIP   10.0.17.161   <none>        80/TCP    2m9s
 ```
 
+From now and only **from inside the cluster**, you can access your Web Application either with http://webapp or with http://IP-GIVEN-TO-SERVICE.
+Let's continue to make your application accessible from Internet.
+
 {% endcollapsible %}
 
 #### Create an Ingress
 
-Create and deploy an Ingress manifest file to make the app publicly accessible.
+Create and deploy an [Ingress manifest](https://kubernetes.io/docs/concepts/services-networking/ingress/) file to make the app publicly accessible. You will have to define the `host` property.
 
 **Task Hints**
 
-* You can use the DNS zone created by enabling [http_application_routing add-on](https://learn.microsoft.com/en-us/azure/aks/http-application-routing) when you created the cluster. You can use [az aks show](https://learn.microsoft.com/en-us/azure/aks/http-application-routing#deploy-http-routing-cli) to get the DNS zone.
+* You can use the DNS zone created by enabling [http_application_routing add-on](https://learn.microsoft.com/en-us/azure/aks/http-application-routing) when you created the cluster. You can use [az aks show](https://learn.microsoft.com/en-us/azure/aks/http-application-routing#deploy-http-routing-cli) to get the host name.
 
 {% collapsible %}
 
-Create an `ingress.yaml` file with the following contents:
+Create an `ingress.yaml` file with the following content:
 
 ```yaml
 #ingress.yaml
@@ -110,7 +111,7 @@ Then deploy it using the following command:
 kubectl apply -f ./ingress.yaml
 ```
 
-You should see an output like:
+You should see an output like this:
 
 ```sh
 ingress.networking.k8s.io/webapp created

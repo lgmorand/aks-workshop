@@ -5,24 +5,18 @@ title: Running the application within a Docker container (25m)
 parent-id: upandrunning
 ---
 
-In this challenge, you will add a Dockerfile to a web application, build it, and run it using a Docker container. You must understand how to build container images  before using an orchestrator such as Kubernetes.
-
-### Tasks
+In this challenge, you will add a Dockerfile to a web application, build it, and run it using a Docker container. You must understand how to build container images before using an orchestrator such as Kubernetes. The build of the image must be done on your computer and Docker must be installed and running.
 
 #### Get the `webapp` source code
 
 Clone the `webapp` from the Github repository [https://github.com/ikhemissi/hello-worlds](https://github.com/ikhemissi/hello-worlds).
 
-The folders are named after various programming languages, so you can choose the one you are most comfortable with.
-
 {% collapsible %}
 
 ```sh
 # Clone the repo
-git clone git@github.com:ikhemissi/hello-worlds.git
+git clone https://github.com/ikhemissi/hello-worlds.git
 cd hello-worlds
-
-# Choose the NodeJS version of the app
 cd nodejs
 ```
 
@@ -30,7 +24,7 @@ cd nodejs
 
 #### Build a Docker image
 
-To run the app in Docker, you need to add a [Dockerfile](https://docs.docker.com/build/building/packaging/#dockerfile) describing how the app will be built and ran.
+To run the app in Docker, you need to add a [Dockerfile](https://docs.docker.com/build/building/packaging/#dockerfile) describing how the app will be built and run.
 
 Create a new file named `Dockerfile` at the root of the app code and fill it with instructions on how to build and run the app.
 
@@ -71,7 +65,7 @@ docker build -t webapp .
 
 #### Run the app
 
-Use `docker run` to start a new container from the image you have just created.
+Use `docker run` to start a new container from the image you have just created. Use the port 9000 for your test (or any available one).
 
 {% collapsible %}
 

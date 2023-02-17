@@ -9,11 +9,7 @@ Azure provides [ACR](https://learn.microsoft.com/en-us/azure/container-registry/
 
 You will use ACR to store and distribute the container image that you have built in the previous challenges.
 
-### Tasks
-
 #### Create a Resource Group
-
-> **Note** You don't need to create a resource group if you're using the lab environment. You can use the resource group created for you as part of the lab. To retrieve the resource group name in the managed lab environment, run `az group list`.
 
 Create a resource group, which will be used to create the registry and the Kubernetes cluster (in the next challenge).
 
@@ -35,9 +31,7 @@ az group create --name <resource-group> --location <region>
 
 #### Create a Container Registry
 
-Create a container registry in the new resource group and note down its name.
-
-> **Hint** Check the `Quick start` in the navigation menu of your Container Registry.
+Create a container registry in the new resource group.
 
 {% collapsible %}
 
@@ -55,6 +49,8 @@ az acr list --resource-group <resource-group> --output table
 
 Publish the web app image to the new registry.
 
+> **Hint** Check the `Quick start` in the navigation menu of your Container Registry.
+
 {% collapsible %}
 
 ```sh
@@ -62,10 +58,10 @@ Publish the web app image to the new registry.
 az acr login -n <registry-name>
 
 # Tag the existing image with a new registry tag
-docker tag webapp <registry-name>/webapp
+docker tag webapp <registry-name>.azurecr.io/webapp
 
 # Publish the image
-docker push <registry-name>/webapp
+docker push <registry-name>.azurecr.io/webapp
 ```
 
 {% endcollapsible %}
@@ -76,7 +72,7 @@ Ensure you can pull the image that you have published in the new registry.
 
 ```sh
 # Pull the image
-docker pull <registry-name>/webapp
+docker pull <registry-name>.azurecr.io/webapp
 ```
 
 {% endcollapsible %}
