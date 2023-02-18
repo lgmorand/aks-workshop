@@ -1,7 +1,6 @@
 pre {
     background-color: $lightgray;
-    margin: 0.5rem 1rem;
-    border-radius: 2px;
+    margin: .5rem 1rem;
     overflow-x: auto;
     font-size: .9rem;
     margin: 1rem 0;
@@ -44,7 +43,7 @@ $darkred: #a61717;
     .ne,
     .nf,
     .ow {
-        font-weight: bold;
+        font-weight: $bold;
     }
 
     .cp,
@@ -90,7 +89,7 @@ $darkred: #a61717;
 
     .kt {
         color: #445588;
-        font-weight: bold;
+        font-weight: $bold;
     }
 
     .m {
@@ -115,7 +114,7 @@ $darkred: #a61717;
 
     .nc {
         color: #445588;
-        font-weight: bold;
+        font-weight: $bold;
     }
 
     .no {
@@ -139,7 +138,7 @@ $darkred: #a61717;
     }
 
     .nt {
-        color: navy;
+        color: $blue;
     }
 
     .nv {
