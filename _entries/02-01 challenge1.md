@@ -9,13 +9,14 @@ In this challenge, you will add a Dockerfile to a web application, build it, and
 
 #### Get the `webapp` source code
 
-Clone the `webapp` from the Github repository [https://github.com/ikhemissi/hello-worlds](https://github.com/ikhemissi/hello-worlds).
+Download the `webapp` from the Github repository: [hello-worlds.zip](https://github.com/lgmorand/aks-workshop/raw/main/sample-app/hello-worlds.zip)
 
 {% collapsible %}
 
 ```sh
 # Clone the repo
-git clone https://github.com/ikhemissi/hello-worlds.git
+wget -O hello-worlds.zip https://github.com/lgmorand/aks-workshop/raw/main/sample-app/hello-worlds.zip
+unzip hello-worlds.zip
 cd hello-worlds
 cd nodejs
 ```
