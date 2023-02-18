@@ -9,7 +9,7 @@ In this challenge, you will add a Dockerfile to a web application, build it, and
 
 #### Get the `webapp` source code
 
-Download the `webapp` from the Github repository: [hello-worlds-main.zip](https://github.com/lgmorand/aks-workshop/raw/main/sample-app/hello-worlds.zip)
+Download the `webapp` from the Github repository: [hello-worlds.zip](https://github.com/lgmorand/aks-workshop/raw/main/sample-app/hello-worlds.zip)
 
 {% collapsible %}
 
