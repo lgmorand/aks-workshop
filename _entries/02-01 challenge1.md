@@ -14,7 +14,6 @@ Download the `webapp` from the Github repository: [hello-worlds.zip](https://git
 {% collapsible %}
 
 ```sh
-# Clone the repo
 wget -O hello-worlds.zip https://github.com/lgmorand/aks-workshop/raw/main/sample-app/hello-worlds.zip
 unzip hello-worlds.zip
 cd hello-worlds
