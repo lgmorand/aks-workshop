@@ -10,8 +10,8 @@ If you want to access the built content, you [can see the lab on this URL](https
 
 The workshop contains:
 
-- a PowerPoint presentation of Azure Kubernetes Service
-- a self-paced lab w
+- a [PowerPoint presentation](https://github.com/lgmorand/aks-workshop/blob/main/presentation/Kubernetes%20on%20Azure.pptx) of Azure Kubernetes Service
+- a self-paced lab
 
 ## Contributing
 
