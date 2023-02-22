@@ -10,7 +10,7 @@ $nav-width: 350px;
         cursor: pointer;
     }
 
-    @media screen and (min-width: $sidebar-collapse + 1) {
+    @media screen and (min-width: ($sidebar-collapse + 1)) {
         display: none;
     }
 }

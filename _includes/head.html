@@ -1,7 +1,6 @@
 <meta charset="UTF-8">
 <title>{{ site.name }}</title>
 
-<meta name="viewport" content="width=device-width">
 <meta name="author" content="{{ site.author }}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -24,19 +23,22 @@
   content="https://raw.githubusercontent.com/lgmorand/aks-workshop/main/media/facebook-banner.jpg">
 <meta name="twitter:site" content="@lgmorand">
 
-<link rel="stylesheet" href="css/github-markdown.css">
-<link rel="stylesheet" href="css/main.css">
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-<script src="js/jquery-3.6.3.min.js"></script>
+<!-- Async CSS load, see: https://stackoverflow.com/a/46750893 -->
+<link href="css/main.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="css/main.css">
+</noscript>
 
-
+<!-- Defers script execution until the associated Document is parsed -->
+<script defer src="https://buttons.github.io/buttons.js"></script>
+<script defer src="js/jquery-3.6.3.min.js"></script>
+<script defer src="js/scripts.js"></script>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-32EH4WJ4C3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
-
   gtag('config', 'G-32EH4WJ4C3');
 </script>
