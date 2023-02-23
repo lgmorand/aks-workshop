@@ -1,5 +1,5 @@
 install:
-	gem install jekyll
+	bundle install
 
 upgrade:
 	gem update --system

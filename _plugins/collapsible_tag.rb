@@ -9,21 +9,13 @@ module Jekyll
       @parsedText = converter.convert(@text)
 
       <<~COLLAPSIBLEBLOCK
-<!-- Begin collapsible container div -->
 <div class="collapsible-content-container">
-  <!-- Begin collapsible container button -->
   <button class="toggle-collapsible">Toggle solution</button>
-  <!-- Begin collapsible container content div -->
   <div class="collapsible-content">
-    <!-- Begin parsedText -->
     #{@parsedText}
-    <!-- End parsedText -->
   </div>
-  <!-- End collapsible container content div -->
 </div>
-<!-- End collapsible container div -->
       COLLAPSIBLEBLOCK
-
     end
 
   end

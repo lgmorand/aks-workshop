@@ -21,18 +21,20 @@
 
     <div class="container">
         <div class="overview">
-            <span class="toggle">close</span>
+            <button class="toggle">Close</button>
             {% include header.html %}
             {% include nav.html %}
         </div>
 
-        <div id="consent-container"></div>
-
         <div class="content">
-            <span class="toggle">open</span>
+            <button class="toggle">Open</button>
             <article class="markdown-body">
                 {{ content }}
             </article>
+            <footer>
+                <span>Azure® is a registered trademark of Microsoft Corporation.</span>
+                <a href="{{ site.github.repository_url }}/commit/{{ site.github.build_revision }}">Build {{ site.github.build_revision | truncate: 8, "" }}</a>
+            </footer>
         </div>
     </div>
 </body>
