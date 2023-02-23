@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    {% include head.html %}
+</head>
+
+<body>
+    <style>
+        html {
+            display: none;
+        }
+    </style>
+    <script>
+        if (self == top) {
+            document.documentElement.style.display = 'block';
+        } else {
+            top.location = self.location;
+        }
+    </script>
+
+    <div class="container">
+        <div class="overview">
+            <button class="toggle">Close</button>
+            {% include header.html %}
+            {% include nav.html %}
+        </div>
+
+        <div class="content">
+            <button class="toggle">Open</button>
+            <article class="markdown-body">
+                {{ content }}
+            </article>
+            <footer>
+                <span>Azure® is a registered trademark of Microsoft Corporation.</span>
+                <a href="{{ site.github.repository_url }}/commit/{{ site.github.build_revision }}">Build {{ site.github.build_revision | truncate: 8, "" }}</a>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

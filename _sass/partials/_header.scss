@@ -1,0 +1,17 @@
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 2rem 1rem;
+
+  img {
+    height: 3rem;
+    width: auto;
+  }
+
+  span {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    font-weight: $bold;
+  }
+}

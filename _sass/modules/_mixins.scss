@@ -1,0 +1,6 @@
+@mixin paddinghack($containerwidth, $ratiowidth, $ratioheight) {
+  position: relative;
+  width: $containerwidth;
+  height: 0;
+  padding: (calc($ratioheight / $ratiowidth) * $containerwidth) 0 0 0;
+}

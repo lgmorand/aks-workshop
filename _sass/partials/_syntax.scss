@@ -1,0 +1,236 @@
+pre {
+  background-color: $lightgray;
+  margin: .5rem 1rem;
+  overflow-x: auto;
+  font-size: .9rem;
+  margin: 1rem 0;
+}
+
+$olivegray: #999988;
+$palepink: #e3d2d2;
+$darkred: #a61717;
+
+.highlight {
+
+  pre,
+  .hll {
+    @extend pre;
+  }
+
+  .c,
+  .cm,
+  .c1 {
+    color: $olivegray;
+  }
+
+  .err,
+  .gr,
+  .gt {
+    color: $darkred;
+  }
+
+  .k,
+  .o,
+  .cp,
+  .cs,
+  .gs,
+  .kc,
+  .kd,
+  .kn,
+  .kp,
+  .kr,
+  .gu,
+  .ne,
+  .nf,
+  .ow {
+    font-weight: $bold;
+  }
+
+  .cp,
+  .cs,
+  .gh {
+    color: $mediumgray;
+  }
+
+  .gd,
+  .gd .x,
+  .gi,
+  .gi .x {
+    color: $black;
+  }
+
+  .gd {
+    background-color: $palepink;
+  }
+
+  .gd .x {
+    background-color: #ffaaaa;
+  }
+
+  .gi {
+    background-color: #ddffdd;
+
+    .x {
+      background-color: #aaffaa;
+    }
+  }
+
+  .go {
+    color: $darkgray;
+  }
+
+  .gp {
+    color: $darkgray;
+  }
+
+  .gu {
+    color: #800080;
+  }
+
+  .kt {
+    color: #445588;
+    font-weight: $bold;
+  }
+
+  .m {
+    color: #009999;
+  }
+
+  .s {
+    color: $green;
+  }
+
+  .n {
+    color: $darkgray;
+  }
+
+  .na {
+    color: teal;
+  }
+
+  .nb {
+    color: #0086b3;
+  }
+
+  .nc {
+    color: #445588;
+    font-weight: $bold;
+  }
+
+  .no {
+    color: teal;
+  }
+
+  .ni {
+    color: purple;
+  }
+
+  .ne {
+    color: #990000;
+  }
+
+  .nf {
+    color: #990000;
+  }
+
+  .nn {
+    color: $darkgray;
+  }
+
+  .nt {
+    color: $blue;
+  }
+
+  .nv {
+    color: teal;
+  }
+
+  .w {
+    color: $mediumgray;
+  }
+
+  .mf {
+    color: #009999;
+  }
+
+  .mh {
+    color: #009999;
+  }
+
+  .mi {
+    color: #009999;
+  }
+
+  .mo {
+    color: #009999;
+  }
+
+  .sb {
+    color: #dd1144;
+  }
+
+  .sc {
+    color: #dd1144;
+  }
+
+  .sd {
+    color: #dd1144;
+  }
+
+  .s2 {
+    color: $green;
+  }
+
+  .se {
+    color: #dd1144;
+  }
+
+  .sh {
+    color: #dd1144;
+  }
+
+  .si {
+    color: #dd1144;
+  }
+
+  .sx {
+    color: #dd1144;
+  }
+
+  .sr {
+    color: #009926;
+  }
+
+  .s1 {
+    color: #dd1144;
+  }
+
+  .ss {
+    color: #990073;
+  }
+
+  .bp {
+    color: $mediumgray;
+  }
+
+  .vc {
+    color: teal;
+  }
+
+  .vg {
+    color: teal;
+  }
+
+  .vi {
+    color: teal;
+  }
+
+  .il {
+    color: #009999;
+  }
+
+  .gc {
+    color: $mediumgray;
+    background-color: $lightgray;
+  }
+}
