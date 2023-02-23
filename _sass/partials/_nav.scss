@@ -4,10 +4,10 @@ $nav-width: 350px;
     position: absolute;
     padding: 1rem;
     z-index: 100;
+    cursor: pointer;
 
     &:hover {
         background: $lightgray;
-        cursor: pointer;
     }
 
     @media screen and (min-width: ($sidebar-collapse + 1)) {
@@ -59,6 +59,24 @@ $nav-width: 350px;
             font-size: .875rem;
         }
 
+        a {
+            display: block;
+            color: inherit;
+            padding-top: .25rem;
+            padding-bottom: .25rem;
+
+            // Accessibility: Gives for users with pointing device a larger tap area
+            // See: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-pointer
+            @media (any-pointer: coarse) {
+                padding-top: .5rem;
+                padding-bottom: .5rem;
+            }
+
+            &:before {
+                content: counters(nested-counter, ".") ". ";
+            }
+        }
+
         .active {
             >a {
                 font-weight: $bold;
@@ -68,30 +86,14 @@ $nav-width: 350px;
 
         >li {
             a {
-                display: block;
-                padding: .25rem 1rem;
-                color: inherit;
-
-                &:before {
-                    content: counters(nested-counter, ".") ". ";
-                }
+                padding-left: 1rem;
+                padding-right: 1rem;
             }
 
             li {
                 a {
-                    padding: .25rem 2rem;
-                }
-
-                li {
-                    a {
-                        padding: .25rem 3rem;
-                    }
-
-                    li {
-                        a {
-                            padding: .25rem 4rem;
-                        }
-                    }
+                    padding-left: 2rem;
+                    padding-right: 2rem;
                 }
             }
         }

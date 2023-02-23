@@ -157,8 +157,8 @@ h5 {
 code,
 kbd,
 pre {
-  font-family: $fonts-mono;
-  font-size: 85%;
+    font-family: $fonts-mono;
+    font-size: 85%;
 }
 
 .video_container {
@@ -198,8 +198,14 @@ a {
     background: unset;
     cursor: pointer;
 
+    &:hover,
+    &:active {
+        outline-width: 0;
+    }
+
     &:hover {
         text-decoration: underline;
+        background-color: rgba($lightgray, .5);
     }
 
     &:visited {

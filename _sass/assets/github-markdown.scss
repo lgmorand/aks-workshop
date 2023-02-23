@@ -137,15 +137,6 @@
   fill: currentColor;
 }
 
-.markdown-body a {
-  background-color: transparent;
-}
-
-.markdown-body a:active,
-.markdown-body a:hover {
-  outline-width: 0;
-}
-
 .markdown-body strong {
   font-weight: inherit;
 }
@@ -296,11 +287,6 @@
   margin-bottom: 0 !important;
 }
 
-.markdown-body a:not([href]) {
-  color: inherit;
-  text-decoration: none;
-}
-
 .markdown-body .anchor {
   float: left;
   margin-right: 4px;
@@ -335,6 +321,14 @@
       color: #1b1f23;
       vertical-align: middle;
       visibility: hidden;
+    }
+  }
+
+  a {
+    // Accessibility: Gives for users with pointing device a larger tap area
+    // See: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-pointer
+    @media (any-pointer: coarse) {
+      padding: .2rem;
     }
   }
 
