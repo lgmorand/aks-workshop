@@ -106,7 +106,7 @@ Make a request to the newly deployed web app and ensure it returns `Hello AKS`.
 
 **Task Hints**
 
-* Use port forwarding with `kubectl` to directly access pods in the AKS cluster
+* Use port forwarding with `kubectl port-forward` to directly access pods in the AKS cluster
 
 {% collapsible %}
 

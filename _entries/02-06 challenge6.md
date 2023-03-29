@@ -81,10 +81,30 @@ Create and deploy an [Ingress manifest](https://kubernetes.io/docs/concepts/serv
 
 {% collapsible %}
 
+First, get the host name by running this command:
+
+```sh
+az aks show --resource-group <resource-group-name> --name <cluster-name> --query addonProfiles
+```
+
+You will get a big JSON as result:
+
+```json
+"addonProfiles": {
+    "httpApplicationRouting": {
+      "config": {
+        "HTTPApplicationRoutingZoneName": "3f6f8a980e453ba5e9.francecentral.aksapp.io"
+      },
+    }
+}
+```
+
+The host name to use is inside the property `HTTPApplicationRoutingZoneName`.
+
 Create an `ingress.yaml` file with the following content:
 
 ```yaml
-#ingress.yaml
+# ingress.yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -104,6 +124,10 @@ spec:
             path: / # Which path is this rule referring to
             pathType: Prefix # See more at https://kubernetes.io/docs/concepts/services-networking/ingress/#path-types
 ```
+
+> **Note**
+>
+> The annotation `kubernetes.io/ingress.class: addon-http-application-routing` is deprecated and will be replaced by `ingressClassName: addon-http-application-routing` in the `spec` section. This will be managed in future version of AKS.
 
 Then deploy it using the following command:
 

@@ -63,6 +63,10 @@ az aks nodepool add \
   --node-vm-size Standard_B2s
 ```
 
+The userpool is used to separe the pods you will create from the default one managed by the Kubernetes system and you should see something like this:
+
+![Node pools](./media/aks-node-pools.png "Node pools")
+
 > **Notes**
 
 * You can optionally enable the autoscaler using the options `--enable-cluster-autoscaler`, `--min-count`, and `--max-count` in `az aks create`.
@@ -92,6 +96,11 @@ List of the available nodes
 ```sh
 kubectl get nodes
 ```
+
+> **Notes**
+>
+> If `kubectl` has some issues to connect to your cluster, you can run the command:
+> `export KUBECONFIG=PATH_TO_KUBERNETES_CONFIG_FILE` to specify the path to the credentials generated from the previous `az aks get-credentials` command
 
 {% endcollapsible %}
 

@@ -107,7 +107,7 @@ Once the load test ends, you should start seeing changes in resource usage (`TAR
 
 #### Enable the Cluster Autoscaler
 
-Update the user node pool (e.g., `userpool`) of your AKS cluster to enable the autoscaler and define the minimum number of nodes to 1 and the maximum to 3.
+Update the user node pool that you created in a [previous section](./#deploy) (e.g., `userpool`) of your AKS cluster to enable the autoscaler and define the minimum number of nodes to 1 and the maximum to 3.
 
 {% collapsible %}
 
