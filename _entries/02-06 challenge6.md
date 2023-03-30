@@ -87,7 +87,7 @@ First, get the host name by running this command:
 az aks show --resource-group <resource-group-name> --name <cluster-name> --query addonProfiles
 ```
 
-You will get a big JSON as result:
+You will get a JSON result with this section:
 
 ```json
 "addonProfiles": {
