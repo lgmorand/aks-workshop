@@ -40,7 +40,7 @@ ENV NODE_ENV=production
 # Copy app code and install dependencies
 WORKDIR /app
 COPY ["package.json", "package-lock.json*", "./"]
-RUN npm install --production
+RUN npm ci
 COPY . .
 
 # Start the app
