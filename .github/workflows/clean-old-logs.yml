@@ -17,3 +17,5 @@ jobs:
           days_old: 14 
           token: ${{ github.token }}
       - uses: gautamkrishnar/keepalive-workflow@v1
+        with:
+          time_elapsed: 30
