@@ -16,13 +16,13 @@ You can either let Azure choose the default version of kubernetes for you or you
 Get the latest available Kubernetes version in your preferred region and store it in a bash variable. Replace `<region>` with the region of your choosing, for example `eastus`.
 
 ```sh
-version=$(az aks get-versions -l <region> --query 'orchestrators[?!isPreview] | [-1].orchestratorVersion' -o tsv)
+version=$(az aks get-versions -l <region> --query 'values[] | [0].version' -o tsv)
 ```
 
 The command above returns the newest version of Kubernetes available to deploy using AKS. Newer Kubernetes releases are typically made available in “Preview”. To get the latest non-preview version of Kubernetes, use the following command instead.
 
 ```sh
-version=$(az aks get-versions -l <region> --query 'orchestrators[?isPreview == null].[orchestratorVersion][-1]' -o tsv)
+version=$(az aks get-versions -l <region> --query 'values[?isPreview == null].[version][0]' -o tsv)
 ```
 
 {% endcollapsible %}
