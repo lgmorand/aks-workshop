@@ -28,7 +28,7 @@ jobs:
         env:
           AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.CONNECTION_STRING }}
         with:
-          azcliversion: 2.44.1
+          azcliversion: 2.53.0
           inlineScript: |
             az config set extension.use_dynamic_install=yes_without_prompt
 

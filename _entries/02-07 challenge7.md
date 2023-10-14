@@ -33,6 +33,10 @@ Check the following metrics:
 | Outbound traffic  | Network Out Bytes                                     |
 | Available memory  | Total amount of available memory in a managed cluster |
 
+Below an example with the CPU Usage Percentage:
+
+![CPU Usage Percentage](./media/aks-cpu-usage-percentage.png "CPU Usage Percentage")
+
 {% endcollapsible %}
 
 > **Note** Configure [Container Insights](https://learn.microsoft.com/en-us/azure/aks/monitor-aks#container-insights) to expand on the basic monitoring features and get data about the health and performance of your AKS cluster.

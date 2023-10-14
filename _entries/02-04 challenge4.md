@@ -16,13 +16,13 @@ You can either let Azure choose the default version of kubernetes for you or you
 Get the latest available Kubernetes version in your preferred region and store it in a bash variable. Replace `<region>` with the region of your choosing, for example `eastus`.
 
 ```sh
-version=$(az aks get-versions -l <region> --query 'orchestrators[?!isPreview] | [-1].orchestratorVersion' -o tsv)
+version=$(az aks get-versions -l <region> --query 'values[] | [0].version' -o tsv)
 ```
 
 The command above returns the newest version of Kubernetes available to deploy using AKS. Newer Kubernetes releases are typically made available in “Preview”. To get the latest non-preview version of Kubernetes, use the following command instead.
 
 ```sh
-version=$(az aks get-versions -l <region> --query 'orchestrators[?isPreview == null].[orchestratorVersion][-1]' -o tsv)
+version=$(az aks get-versions -l <region> --query 'values[?isPreview == null].[version][0]' -o tsv)
 ```
 
 {% endcollapsible %}
@@ -63,6 +63,10 @@ az aks nodepool add \
   --node-vm-size Standard_B2s
 ```
 
+The userpool is used to isolate the pods you will create from the default one managed by the Kubernetes system and you should see something like this:
+
+![Node pools](./media/aks-node-pools.png "Node pools")
+
 > **Notes**
 
 * You can optionally enable the autoscaler using the options `--enable-cluster-autoscaler`, `--min-count`, and `--max-count` in `az aks create`.
@@ -92,6 +96,11 @@ List of the available nodes
 ```sh
 kubectl get nodes
 ```
+
+> **Notes**
+>
+> If `kubectl` has some issues to connect to your cluster, you can run the command:
+> `export KUBECONFIG=PATH_TO_KUBERNETES_CONFIG_FILE` to specify the path to the credentials generated from the previous `az aks get-credentials` command
 
 {% endcollapsible %}
 
