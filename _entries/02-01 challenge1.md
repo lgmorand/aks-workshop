@@ -63,6 +63,8 @@ docker build -t webapp .
 
 {% endcollapsible %}
 
+> Warning: if you get an error message telling that you can't connect to the docker daemon. either start Docker app locally (start Menu) or start your shell with elevated privileges (administrator). "Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+
 #### Run the app
 
 Use `docker run` to start a new container from the image you have just created. Use the port 9000 for your test (or any available one).
