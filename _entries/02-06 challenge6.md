@@ -147,6 +147,8 @@ ingress.networking.k8s.io/webapp created
 
 Make a request to the web app using the FQDN of the newly created ingress and ensure it returns `Hello AKS`.
 
+> Note: it may takes few minutes for the full FQDN to work
+
 {% collapsible %}
 
 Use `kubectl get ingress` to get the FQDN of the ingress and ensure there is a public IP:
