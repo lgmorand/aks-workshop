@@ -228,11 +228,14 @@ docker run -it -p 9000:80 webapp
 
 Finally, load the app URL [http://localhost:9000](http://localhost:9000) in a browser and make sure you see a `Hello world` message.
 
-> **Resources**
->
+<div class="info" data-title="Resources">
+
 > * <https://docs.docker.com/get-started/02_our_app/>
 > * <https://docs.docker.com/language/>
 > * <https://docs.docker.com/engine/reference/builder/>
+
+</div>
+
 
 ## Customizing the containerized app (5m)
 
@@ -256,11 +259,19 @@ docker run -it -p 9000:80 -e "GREETEE=Docker" -e "VERSION=1.0.0" -e "ENVIRONMENT
 
 </details>
 
-> **Note** While you can customize the behaviour of containers using arguments (build), environment variables (runtime), volumes (runtime), and network calls (runtime), the deployment envrironment is usually set with an environment variable and the app version is usually set using an argument.
+<div class="info" data-title="Note">
 
-> **Resources**
->
+> While you can customize the behaviour of containers using arguments (build), environment variables (runtime), volumes (runtime), and network calls (runtime), the deployment envrironment is usually set with an environment variable and the app version is usually set using an argument.
+
+</div>
+
+
+<div class="info" data-title="Resources">
+
 > - <https://docs.docker.com/engine/reference/run/>
+
+</div>
+
 
 ## Publishing to a Docker registry (15m)
 
@@ -346,10 +357,12 @@ docker pull <registry-name>.azurecr.io/webapp
 
 </details>
 
-> **Resources**
->
+<div class="info" data-title="Resources">
+
 > * <https://learn.microsoft.com/en-us/azure/container-registry/>
 > * <https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli?tabs=azure-cli/>
+
+</div>
 
 
 ## Deploying Kubernetes with AKS (30m)
@@ -419,10 +432,15 @@ The userpool is used to isolate the pods you will create from the default one ma
 
 ![Node pools](assets/aks-node-pools.png "Node pools")
 
-> **Notes**
+<div class="info" data-title="Note">
 
-* You can optionally enable the autoscaler using the options `--enable-cluster-autoscaler`, `--min-count`, and `--max-count` in `az aks create`.
-* You can attach an ACR registry to an existing AKS cluster using `az aks update -n <cluster-name> -g <resource-group> --attach-acr <registry-name>`
+> * You can optionally enable the autoscaler using the options `--enable-cluster-autoscaler`, `--min-count`, and `--max-count` in `az aks create`.
+> * You can attach an ACR registry to an existing AKS cluster using `az aks update -n <cluster-name> -g <resource-group> --attach-acr <registry-name>`
+
+</div>
+
+
+
 
 </details>
 
@@ -459,14 +477,16 @@ kubectl get nodes
 
 </details>
 
-> **Resources**
->
+<div class="info" data-title="Note">
+
 > * <https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough>
 > * <https://learn.microsoft.com/en-us/azure/aks/cluster-container-registry-integration?tabs=azure-cli>
 > * <https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az-aks-create>
 > * <https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-portal>
 > * <https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough#connect-to-the-cluster>
 > * <https://kubernetes.io/docs/reference/kubectl/cheatsheet/>
+
+</div>
 
 ## Deploying the app to AKS (20m)
 
@@ -592,12 +612,14 @@ You can now load the URL `http://localhost:4000/` on your browser and ensure it 
 
 </details>
 
-> **Resources**
->
+<div class="info" data-title="Resources">
+
 > * <https://kubernetes.io/docs/concepts/workloads/controllers/deployment/>
 > * <https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster/>
 > * <https://learn.microsoft.com/en-us/training/modules/aks-deploy-container-app/5-exercise-deploy-app/>
 > * <https://learn.microsoft.com/en-us/azure/aks/node-access/>
+
+</div>
 
 ## Enabling public access (30m)
 
@@ -724,9 +746,12 @@ spec:
             pathType: Prefix # See more at https://kubernetes.io/docs/concepts/services-networking/ingress/#path-types
 ```
 
-> **Note**
->
+<div class="info" data-title="Note">
+
 > The annotation `kubernetes.io/ingress.class: addon-http-application-routing` is deprecated and will be replaced by `ingressClassName: addon-http-application-routing` in the `spec` section. This will be managed in future version of AKS.
+
+</div>
+
 
 Then deploy it using the following command:
 
@@ -768,12 +793,15 @@ You can now load the URL `0c29284998e94bea9005.westeurope.aksapp.io` on your bro
 
 </details>
 
-> **Resources**
->
+<div class="info" data-title="Note">
+
 > * <https://kubernetes.io/docs/concepts/services-networking/>
 > * <https://learn.microsoft.com/en-us/cli/azure/network/dns/zone?view=azure-cli-latest#az-network-dns-zone-list/>
 > * <https://learn.microsoft.com/en-us/azure/aks/http-application-routing/>
 > * <https://learn.microsoft.com/en-us/training/modules/aks-deploy-container-app/7-exercise-expose-app/>
+
+</div>
+
 
 ## Getting basic activity metrics (15m)
 
@@ -812,11 +840,19 @@ Below an example with the CPU Usage Percentage:
 
 </details>
 
-> **Note** Configure [Container Insights](https://learn.microsoft.com/en-us/azure/aks/monitor-aks#container-insights) to expand on the basic monitoring features and get data about the health and performance of your AKS cluster.
+<div class="info" data-title="Note">
 
-> **Resources**
->
+> Configure [Container Insights](https://learn.microsoft.com/en-us/azure/aks/monitor-aks#container-insights) to expand on the basic monitoring features and get data about the health and performance of your AKS cluster.
+
+</div>
+
+
+<div class="info" data-title="Resources">
+
 > - <https://learn.microsoft.com/en-us/azure/aks/monitor-aks/>
+
+</div>
+
 
 ---
 
@@ -966,8 +1002,6 @@ az aks nodepool show \
 > * <https://learn.microsoft.com/en-us/azure/aks/cluster-autoscaler/>
 
 </div>
-
-
 
 
 ---
