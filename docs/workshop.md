@@ -62,7 +62,7 @@ Alternatively, you need to meet the following requirements:
 #### If you have an Azure subscription
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 Please consider using your username and password to login into [the Azure Portal](https://portal.azure.com). Also, please authenticate your Azure CLI by running the command below on your machine and following the instructions.
 
@@ -78,7 +78,7 @@ az login
 You can use the Azure Cloud Shell accessible at <https://shell.azure.com> once you log in with an Azure subscription.
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 Head over to <https://shell.azure.com> and sign in with your Azure Subscription details.
 
@@ -124,7 +124,11 @@ Further optional sections will extend this application with additional features 
 
 Useful resources are provided to help you work through each task. If you're working through this as part of a team-based exercise, ensure you make progress at a good pace by dividing the workload between team members when possible. This may require work that might be needed in a later task.
 
-> **Hint**: If you get stuck, you can ask for help from the proctors. You may also choose to peek at the solutions.
+<div class="tip" data-title="Tip">
+
+> If you get stuck, you can ask for help from the proctors. You may also choose to peek at the solutions.
+
+</div>
 
 ### Core tasks
 
@@ -147,7 +151,7 @@ In this challenge, you will add a Dockerfile to a web application, build it, and
 Download the `webapp` from the Github repository: [hello-worlds.zip](https://github.com/lgmorand/aks-workshop/raw/main/sample-app/hello-worlds.zip)
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 ```sh
 wget -O hello-worlds.zip https://github.com/lgmorand/aks-workshop/raw/main/sample-app/hello-worlds.zip
@@ -164,10 +168,15 @@ To run the app in Docker, you need to add a [Dockerfile](https://docs.docker.com
 
 Create a new file named `Dockerfile` at the root of the app code and fill it with instructions on how to build and run the app.
 
-> **Hint** Refer to Docker's [language-specific guide](https://docs.docker.com/language/)
+<div class="tip" data-title="Tip">
+
+> Refer to Docker's [language-specific guide](https://docs.docker.com/language/)
+
+</div>
+
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 ```dockerfile
 FROM node:lts
@@ -192,7 +201,7 @@ Now that you have a Dockerfile, you need to use it to build a Docker image.
 Use `docker build` to create the image.
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 ```sh
 # Run this command in the root of the nodejs directory, where you created a Dockerfile
@@ -208,7 +217,7 @@ docker build -t webapp .
 Use `docker run` to start a new container from the image you have just created. Use the port 9000 for your test (or any available one).
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 ```sh
 # Use the port 9000 to serve the app
@@ -239,7 +248,7 @@ Customize the output of the app without rebuilding the Docker image to have the 
 - set the header `X-Environment` to `test`
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 ```sh
 docker run -it -p 9000:80 -e "GREETEE=Docker" -e "VERSION=1.0.0" -e "ENVIRONMENT=test" webapp
@@ -265,7 +274,7 @@ You will use ACR to store and distribute the container image that you have built
 Create a resource group, which will be used to create the registry and the Kubernetes cluster (in the next challenge).
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 Use `az account list-locations` to get a location:
 
@@ -286,7 +295,7 @@ az group create --name <resource-group> --location <region>
 Create a container registry in the new resource group.
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 ```sh
 # Create the registry
@@ -302,10 +311,15 @@ az acr list --resource-group <resource-group> --output table
 
 Publish the web app image to the new registry.
 
-> **Hint** Check the `Quick start` in the navigation menu of your Container Registry.
+<div class="info" data-title="Note">
+
+> Check the `Quick start` in the navigation menu of your Container Registry.
+
+</div>
+
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 ```sh
 # Login to the docker registry
@@ -323,7 +337,7 @@ docker push <registry-name>.azurecr.io/webapp
 Ensure you can pull the image that you have published in the new registry.
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 ```sh
 # Pull the image
@@ -348,7 +362,7 @@ Azure has a managed Kubernetes service, AKS (Azure Kubernetes Service), you will
 You can either let Azure choose the default version of kubernetes for you or you can specify the version during the creation of the cluster. To know which version of kubernetes is supported in your region, use the command `az aks get-versions`
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 Get the latest available Kubernetes version in your preferred region and store it in a bash variable. Replace `<region>` with the region of your choosing, for example `eastus`.
 
@@ -377,7 +391,7 @@ version=$(az aks get-versions -l <region> --query 'values[?isPreview == null].[v
 Create AKS using the latest version
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 ```sh
 az aks create \
@@ -422,7 +436,7 @@ The userpool is used to isolate the pods you will create from the default one ma
 * [This is a good cheat sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) for kubectl.
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 Authenticate against the cluster. The `az aks get-credentials` connect to the cluster and create a local kubeconfig file which will be used by `kubectl` to connect to the cluster.
 
@@ -436,10 +450,12 @@ List of the available nodes
 kubectl get nodes
 ```
 
-> **Notes**
->
+<div class="info" data-title="Note">
+
 > If `kubectl` has some issues to connect to your cluster, you can run the command:
 > `export KUBECONFIG=PATH_TO_KUBERNETES_CONFIG_FILE` to specify the path to the credentials generated from the previous `az aks get-credentials` command
+
+</div>
 
 </details>
 
@@ -465,7 +481,7 @@ Kubernetes groups containers into logical structures called pods, which have no 
 Create a deployment file and set the environment variable `GREETEE` to `AKS`.
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 Create a `deployment.yaml` file with the following contents, and make sure to replace `<registry-fqdn>` with the fully qualified name of your registry:
 
@@ -511,7 +527,7 @@ spec:
 Use `kubectl` to apply the manifest and deploy the app.
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 Apply the deployment:
 
@@ -537,7 +553,7 @@ webapp            0/1     1            0           16s
 Use `kubectl get pods` to check if the pod is running. Obtain the name of the created pod.
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 ```sh
 kubectl get pods
@@ -561,7 +577,7 @@ Make a request to the newly deployed web app and ensure it returns `Hello AKS`.
 * Use port forwarding with `kubectl port-forward` to directly access pods in the AKS cluster
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 Use `kubectl port-forward` to directly access a pod:
 
@@ -595,7 +611,7 @@ In this challenge, you will expose the application by creating a [Service](https
 Create and deploy a Service manifest file and set its type to `ClusterIP`.
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 Create a `service.yaml` file with the following contents:
 
@@ -633,7 +649,7 @@ service/webapp created
 Make sure the service was created using `kubectl get service`
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 Run the following command:
 
@@ -662,7 +678,7 @@ Create and deploy an [Ingress manifest](https://kubernetes.io/docs/concepts/serv
 * You can use the DNS zone created by enabling [http_application_routing add-on](https://learn.microsoft.com/en-us/azure/aks/http-application-routing) when you created the cluster. You can use [az aks show](https://learn.microsoft.com/en-us/azure/aks/http-application-routing#deploy-http-routing-cli) to get the host name.
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 First, get the host name by running this command:
 
@@ -733,7 +749,7 @@ Make a request to the web app using the FQDN of the newly created ingress and en
 > Note: it may takes few minutes for the full FQDN to work
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 Use `kubectl get ingress` to get the FQDN of the ingress and ensure there is a public IP:
 
@@ -777,7 +793,7 @@ Answer the following questions:
 - What is the total amount of available memory in the cluster?
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 Check the following metrics:
 
@@ -826,7 +842,7 @@ Enable the Horizontal Pod Scaler to automatically scale the number of replicas o
 * Make sure you have defined [resource requests and limits](https://learn.microsoft.com/en-us/azure/aks/developer-best-practices-resource-management#define-pod-resource-requests-and-limits) for your pod.
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 Run the following command to enable autoscaling on the `webapp` deployment:
 
@@ -879,7 +895,7 @@ spec:
 Load test your service and make sure the number of pods scales up and down depending on CPU utilization.
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 Use the following command to watch changes to the deployment:
 
@@ -916,7 +932,7 @@ Once the load test ends, you should start seeing changes in resource usage (`TAR
 Update the user node pool that you created in a [previous section](./#deploy) (e.g., `userpool`) of your AKS cluster to enable the autoscaler and define the minimum number of nodes to 1 and the maximum to 3.
 
 <details>
-<summary>Click to expand</summary>
+<summary>Watch solution</summary>
 
 Run the following command to enable the cluster autoscaler:
 
@@ -941,13 +957,18 @@ az aks nodepool show \
 
 </details>
 
-> **Resources**
->
+<div class="info" data-title="Resources">
+
 > * <https://learn.microsoft.com/en-us/azure/aks/concepts-scale/>
 > * <https://learn.microsoft.com/en-us/azure/aks/tutorial-kubernetes-scale?tabs=azure-cli#autoscale-pods/>
 > * <https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/>
 > * <https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#autoscale/>
 > * <https://learn.microsoft.com/en-us/azure/aks/cluster-autoscaler/>
+
+</div>
+
+
+
 
 ---
 
