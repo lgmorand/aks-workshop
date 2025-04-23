@@ -65,7 +65,7 @@ az aks nodepool add \
 
 The userpool is used to isolate the pods you will create from the default one managed by the Kubernetes system and you should see something like this:
 
-![Node pools](./media/aks-node-pools.png "Node pools")
+![Node pools](assets/aks-node-pools.png "Node pools")
 
 > **Notes**
 

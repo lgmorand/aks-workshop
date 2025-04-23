@@ -44,19 +44,19 @@ Head over to <https://shell.azure.com> and sign in with your Azure Subscription 
 
 Select **Bash** as your shell.
 
-![Select Bash](./media/cloudshell/0-bash.png)
+![Select Bash](assets/cloudshell/0-bash.png)
 
 Select **Show advanced settings**
 
-![Select Show advanced settings](./media/cloudshell/1-mountstorage-advanced.png)
+![Select Show advanced settings](assets/cloudshell/1-mountstorage-advanced.png)
 
 Set the **Storage account** and **File share** names to your resource group name (all lowercase, without any special characters), then hit **Create storage**
 
-![Azure Cloud Shell](./media/cloudshell/2-storageaccount-fileshare.png)
+![Azure Cloud Shell](assets/cloudshell/2-storageaccount-fileshare.png)
 
 You should now have access to the Azure Cloud Shell
 
-![Set the storage account and fileshare names](./media/cloudshell/3-cloudshell.png)
+![Set the storage account and fileshare names](assets/cloudshell/3-cloudshell.png)
 
 {% endcollapsible %}
 

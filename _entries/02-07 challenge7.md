@@ -35,7 +35,7 @@ Check the following metrics:
 
 Below an example with the CPU Usage Percentage:
 
-![CPU Usage Percentage](./media/aks-cpu-usage-percentage.png "CPU Usage Percentage")
+![CPU Usage Percentage](assets/aks-cpu-usage-percentage.png "CPU Usage Percentage")
 
 {% endcollapsible %}
 
