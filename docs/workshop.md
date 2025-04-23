@@ -771,7 +771,11 @@ ingress.networking.k8s.io/webapp created
 
 Make a request to the web app using the FQDN of the newly created ingress and ensure it returns `Hello AKS`.
 
-> Note: it may takes few minutes for the full FQDN to work
+<div class="info" data-title="Note">
+
+> It may takes few minutes for the full FQDN to work
+
+</div>
 
 <details>
 <summary>Watch solution</summary>
@@ -996,7 +1000,7 @@ az aks nodepool show \
 <div class="info" data-title="Resources">
 
 > * <https://learn.microsoft.com/en-us/azure/aks/concepts-scale/>
-> * <https://learn.microsoft.com/en-us/azure/aks/tutorial-kubernetes-scale?tabs=azure-cli#autoscale-pods/>
+> * <https://learn.microsoft.com/en-us/azure/aks/tutorial-kubernetes-scale?tabs=azure-cli#autoscale-pods>
 > * <https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/>
 > * <https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#autoscale/>
 > * <https://learn.microsoft.com/en-us/azure/aks/cluster-autoscaler/>
