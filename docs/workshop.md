@@ -61,7 +61,8 @@ Alternatively, you need to meet the following requirements:
 
 #### If you have an Azure subscription
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 Please consider using your username and password to login into [the Azure Portal](https://portal.azure.com). Also, please authenticate your Azure CLI by running the command below on your machine and following the instructions.
 
@@ -70,13 +71,14 @@ az account show
 az login
 ```
 
-{% endcollapsible %}
+</details>
 
 #### Azure Cloud Shell
 
 You can use the Azure Cloud Shell accessible at <https://shell.azure.com> once you log in with an Azure subscription.
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 Head over to <https://shell.azure.com> and sign in with your Azure Subscription details.
 
@@ -96,7 +98,7 @@ You should now have access to the Azure Cloud Shell
 
 ![Set the storage account and fileshare names](assets/cloudshell/3-cloudshell.png)
 
-{% endcollapsible %}
+</details>
 
 #### Tips for uploading and editing files in Azure Cloud Shell
 
@@ -144,7 +146,8 @@ In this challenge, you will add a Dockerfile to a web application, build it, and
 
 Download the `webapp` from the Github repository: [hello-worlds.zip](https://github.com/lgmorand/aks-workshop/raw/main/sample-app/hello-worlds.zip)
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 ```sh
 wget -O hello-worlds.zip https://github.com/lgmorand/aks-workshop/raw/main/sample-app/hello-worlds.zip
@@ -153,7 +156,7 @@ cd hello-worlds
 cd nodejs
 ```
 
-{% endcollapsible %}
+</details>
 
 #### Build a Docker image
 
@@ -163,7 +166,8 @@ Create a new file named `Dockerfile` at the root of the app code and fill it wit
 
 > **Hint** Refer to Docker's [language-specific guide](https://docs.docker.com/language/)
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 ```dockerfile
 FROM node:lts
@@ -181,20 +185,21 @@ EXPOSE 80
 CMD [ "node", "server.js" ]
 ```
 
-{% endcollapsible %}
+</details>
 
 Now that you have a Dockerfile, you need to use it to build a Docker image.
 
 Use `docker build` to create the image.
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 ```sh
 # Run this command in the root of the nodejs directory, where you created a Dockerfile
 docker build -t webapp .
 ```
 
-{% endcollapsible %}
+</details>
 
 > Warning: if you get an error message telling that you can't connect to the docker daemon. either start Docker app locally (start Menu) or start your shell with elevated privileges (administrator). "Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
 
@@ -202,14 +207,15 @@ docker build -t webapp .
 
 Use `docker run` to start a new container from the image you have just created. Use the port 9000 for your test (or any available one).
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 ```sh
 # Use the port 9000 to serve the app
 docker run -it -p 9000:80 webapp
 ```
 
-{% endcollapsible %}
+</details>
 
 Finally, load the app URL [http://localhost:9000](http://localhost:9000) in a browser and make sure you see a `Hello world` message.
 
@@ -232,13 +238,14 @@ Customize the output of the app without rebuilding the Docker image to have the 
 - set the header `X-Version` to `1.0.0`
 - set the header `X-Environment` to `test`
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 ```sh
 docker run -it -p 9000:80 -e "GREETEE=Docker" -e "VERSION=1.0.0" -e "ENVIRONMENT=test" webapp
 ```
 
-{% endcollapsible %}
+</details>
 
 > **Note** While you can customize the behaviour of containers using arguments (build), environment variables (runtime), volumes (runtime), and network calls (runtime), the deployment envrironment is usually set with an environment variable and the app version is usually set using an argument.
 
@@ -257,7 +264,8 @@ You will use ACR to store and distribute the container image that you have built
 
 Create a resource group, which will be used to create the registry and the Kubernetes cluster (in the next challenge).
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 Use `az account list-locations` to get a location:
 
@@ -271,13 +279,14 @@ Then create the resource group using the selected location:
 az group create --name <resource-group> --location <region>
 ```
 
-{% endcollapsible %}
+</details>
 
 #### Create a Container Registry
 
 Create a container registry in the new resource group.
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 ```sh
 # Create the registry
@@ -287,7 +296,7 @@ az acr create --resource-group <resource-group> --name <registry-name> --sku Bas
 az acr list --resource-group <resource-group> --output table
 ```
 
-{% endcollapsible %}
+</details>
 
 #### Publish the app image
 
@@ -295,7 +304,8 @@ Publish the web app image to the new registry.
 
 > **Hint** Check the `Quick start` in the navigation menu of your Container Registry.
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 ```sh
 # Login to the docker registry
@@ -308,18 +318,19 @@ docker tag webapp <registry-name>.azurecr.io/webapp
 docker push <registry-name>.azurecr.io/webapp
 ```
 
-{% endcollapsible %}
+</details>
 
 Ensure you can pull the image that you have published in the new registry.
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 ```sh
 # Pull the image
 docker pull <registry-name>.azurecr.io/webapp
 ```
 
-{% endcollapsible %}
+</details>
 
 > **Resources**
 >
@@ -336,7 +347,8 @@ Azure has a managed Kubernetes service, AKS (Azure Kubernetes Service), you will
 
 You can either let Azure choose the default version of kubernetes for you or you can specify the version during the creation of the cluster. To know which version of kubernetes is supported in your region, use the command `az aks get-versions`
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 Get the latest available Kubernetes version in your preferred region and store it in a bash variable. Replace `<region>` with the region of your choosing, for example `eastus`.
 
@@ -350,7 +362,7 @@ The command above returns the newest version of Kubernetes available to deploy u
 version=$(az aks get-versions -l <region> --query 'values[?isPreview == null].[version][0]' -o tsv)
 ```
 
-{% endcollapsible %}
+</details>
 
 #### Create the AKS cluster
 
@@ -364,7 +376,8 @@ version=$(az aks get-versions -l <region> --query 'values[?isPreview == null].[v
 
 Create AKS using the latest version
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 ```sh
 az aks create \
@@ -397,7 +410,7 @@ The userpool is used to isolate the pods you will create from the default one ma
 * You can optionally enable the autoscaler using the options `--enable-cluster-autoscaler`, `--min-count`, and `--max-count` in `az aks create`.
 * You can attach an ACR registry to an existing AKS cluster using `az aks update -n <cluster-name> -g <resource-group> --attach-acr <registry-name>`
 
-{% endcollapsible %}
+</details>
 
 #### Ensure you can connect to the cluster using `kubectl`
 
@@ -408,7 +421,8 @@ The userpool is used to isolate the pods you will create from the default one ma
 * A good sanity check is listing all the nodes in your cluster `kubectl get nodes`.
 * [This is a good cheat sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) for kubectl.
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 Authenticate against the cluster. The `az aks get-credentials` connect to the cluster and create a local kubeconfig file which will be used by `kubectl` to connect to the cluster.
 
@@ -427,7 +441,7 @@ kubectl get nodes
 > If `kubectl` has some issues to connect to your cluster, you can run the command:
 > `export KUBECONFIG=PATH_TO_KUBERNETES_CONFIG_FILE` to specify the path to the credentials generated from the previous `az aks get-credentials` command
 
-{% endcollapsible %}
+</details>
 
 > **Resources**
 >
@@ -450,7 +464,8 @@ Kubernetes groups containers into logical structures called pods, which have no 
 
 Create a deployment file and set the environment variable `GREETEE` to `AKS`.
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 Create a `deployment.yaml` file with the following contents, and make sure to replace `<registry-fqdn>` with the fully qualified name of your registry:
 
@@ -489,13 +504,14 @@ spec:
               value: AKS
 ```
 
-{% endcollapsible %}
+</details>
 
 #### Deploy the web app image using the manifest
 
 Use `kubectl` to apply the manifest and deploy the app.
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 Apply the deployment:
 
@@ -516,11 +532,12 @@ NAME              READY   UP-TO-DATE   AVAILABLE   AGE
 webapp            0/1     1            0           16s
 ```
 
-{% endcollapsible %}
+</details>
 
 Use `kubectl get pods` to check if the pod is running. Obtain the name of the created pod.
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 ```sh
 kubectl get pods
@@ -533,7 +550,7 @@ NAME                               READY   STATUS    RESTARTS   AGE
 webapp-7c58c5f699-r79mv            1/1     Running   0          63s
 ```
 
-{% endcollapsible %}
+</details>
 
 #### Test the app
 
@@ -543,7 +560,8 @@ Make a request to the newly deployed web app and ensure it returns `Hello AKS`.
 
 * Use port forwarding with `kubectl port-forward` to directly access pods in the AKS cluster
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 Use `kubectl port-forward` to directly access a pod:
 
@@ -556,7 +574,7 @@ kubectl port-forward <pod-name> <local-port>:<pod-port>
 
 You can now load the URL `http://localhost:4000/` on your browser and ensure it returns `Hello AKS`.
 
-{% endcollapsible %}
+</details>
 
 > **Resources**
 >
@@ -576,7 +594,8 @@ In this challenge, you will expose the application by creating a [Service](https
 
 Create and deploy a Service manifest file and set its type to `ClusterIP`.
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 Create a `service.yaml` file with the following contents:
 
@@ -609,11 +628,12 @@ You should see an output like this:
 service/webapp created
 ```
 
-{% endcollapsible %}
+</details>
 
 Make sure the service was created using `kubectl get service`
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 Run the following command:
 
@@ -631,7 +651,7 @@ webapp   ClusterIP   10.0.17.161   <none>        80/TCP    2m9s
 From now and only **from inside the cluster**, you can access your Web Application either with http://webapp or with http://IP-GIVEN-TO-SERVICE.
 Let's continue to make your application accessible from Internet.
 
-{% endcollapsible %}
+</details>
 
 #### Create an Ingress
 
@@ -641,7 +661,8 @@ Create and deploy an [Ingress manifest](https://kubernetes.io/docs/concepts/serv
 
 * You can use the DNS zone created by enabling [http_application_routing add-on](https://learn.microsoft.com/en-us/azure/aks/http-application-routing) when you created the cluster. You can use [az aks show](https://learn.microsoft.com/en-us/azure/aks/http-application-routing#deploy-http-routing-cli) to get the host name.
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 First, get the host name by running this command:
 
@@ -703,7 +724,7 @@ You should see an output like this:
 ingress.networking.k8s.io/webapp created
 ```
 
-{% endcollapsible %}
+</details>
 
 #### Test the app
 
@@ -711,7 +732,8 @@ Make a request to the web app using the FQDN of the newly created ingress and en
 
 > Note: it may takes few minutes for the full FQDN to work
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 Use `kubectl get ingress` to get the FQDN of the ingress and ensure there is a public IP:
 
@@ -728,7 +750,7 @@ webapp   <none>   0c29284998e94bea9005.westeurope.aksapp.io   20.23.222.68   80 
 
 You can now load the URL `0c29284998e94bea9005.westeurope.aksapp.io` on your browser and ensure it returns `Hello AKS`.
 
-{% endcollapsible %}
+</details>
 
 > **Resources**
 >
@@ -754,7 +776,8 @@ Answer the following questions:
 - How much outbound traffic?
 - What is the total amount of available memory in the cluster?
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 Check the following metrics:
 
@@ -771,7 +794,7 @@ Below an example with the CPU Usage Percentage:
 
 ![CPU Usage Percentage](assets/aks-cpu-usage-percentage.png "CPU Usage Percentage")
 
-{% endcollapsible %}
+</details>
 
 > **Note** Configure [Container Insights](https://learn.microsoft.com/en-us/azure/aks/monitor-aks#container-insights) to expand on the basic monitoring features and get data about the health and performance of your AKS cluster.
 
@@ -802,7 +825,8 @@ Enable the Horizontal Pod Scaler to automatically scale the number of replicas o
 
 * Make sure you have defined [resource requests and limits](https://learn.microsoft.com/en-us/azure/aks/developer-best-practices-resource-management#define-pod-resource-requests-and-limits) for your pod.
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 Run the following command to enable autoscaling on the `webapp` deployment:
 
@@ -844,7 +868,7 @@ spec:
         averageUtilization: 50 # target CPU utilization
 ```
 
-{% endcollapsible %}
+</details>
 
 #### Test the Horizontal Pod Autoscaler
 
@@ -854,7 +878,8 @@ spec:
 
 Load test your service and make sure the number of pods scales up and down depending on CPU utilization.
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 Use the following command to watch changes to the deployment:
 
@@ -884,13 +909,14 @@ webapp-hpa   Deployment/webapp   1%/50%     1         3         1          98m
 
 Once the load test ends, you should start seeing changes in resource usage (`TARGETS`) and then the number of `REPLICAS` should start dropping back to `1` (this may take a couple of minutes).
 
-{% endcollapsible %}
+</details>
 
 #### Enable the Cluster Autoscaler
 
 Update the user node pool that you created in a [previous section](./#deploy) (e.g., `userpool`) of your AKS cluster to enable the autoscaler and define the minimum number of nodes to 1 and the maximum to 3.
 
-{% collapsible %}
+<details>
+<summary>Click to expand</summary>
 
 Run the following command to enable the cluster autoscaler:
 
@@ -913,7 +939,7 @@ az aks nodepool show \
     --cluster-name <aks-cluster-name>
 ```
 
-{% endcollapsible %}
+</details>
 
 > **Resources**
 >
