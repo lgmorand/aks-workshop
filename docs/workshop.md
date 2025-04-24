@@ -51,11 +51,11 @@ You can use [the Azure Cloud Shell service](https://shell.azure.com) once you lo
 
 Alternatively, you need to meet the following requirements:
 
-- [Azure CLI](https://github.com/Azure/azure-cli) v2.53.0
-- [Docker CLI](https://github.com/docker/cli) v24.0.1, with [Docker Desktop](https://www.docker.com/products/docker-desktop), or, for licensing-related issues, use [Podman](https://github.com/containers/podman) and [Podman Desktop](https://github.com/containers/podman-desktop)
-- [Helm](https://github.com/helm/helm) v3.11.1
-- [kubectl](https://github.com/kubernetes/kubectl) v0.26.X
-- [Kubernetes](https://kubernetes.io) v1.26 (managed from [Azure Kubernetes Service](https://learn.microsoft.com/en-us/azure/aks))
+- [Azure CLI](https://github.com/Azure/azure-cli) v2.70.0
+- [Docker CLI](https://github.com/docker/cli) v28.0.1, with [Docker Desktop](https://www.docker.com/products/docker-desktop), or, for licensing-related issues, use [Podman](https://github.com/containers/podman) and [Podman Desktop](https://github.com/containers/podman-desktop)
+- [Helm](https://github.com/helm/helm) v3.16.1
+- [kubectl](https://github.com/kubernetes/kubectl) v0.30.X
+- [Kubernetes](https://kubernetes.io) v1.30 (managed from [Azure Kubernetes Service](https://learn.microsoft.com/en-us/azure/aks))
 
 ### Azure subscription
 
